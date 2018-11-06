@@ -1,7 +1,7 @@
 let modal = document.getElementById('form');
 let ok = document.getElementsByClassName('modal')[0];
 var test = document.getElementsByClassName('test')[0];
-let user = ['key'];
+var user = {name: 'key'};
 
 window.onclick = function(event) {
   if (event.target == modal) {
@@ -10,8 +10,7 @@ window.onclick = function(event) {
 }
 
 window.onload = function(event) {
-    checkData(user);
-    console.log("test onload");
+    checkData();
 
 }
     // var modalContent0 = document.getElementsByClassName("")[0];
@@ -19,31 +18,30 @@ window.onload = function(event) {
 function checkdivs (x)
 {
   modal.style.display="block";
-  console.log("test1");
-
 
   if(x==1) {
     modal.style.display =" none";
-    console.log("test122");
-
   }
 }
 
 
-function checkData(user){
-  if (user = 'key'){
-    ok.style.display="none";
-    console.log("test1 checkingdata so dispaly wll be none");
+function checkData(){
 
-  }
-  else {
-    console.log("else show modal");
+  if (checkUser() === null ){
+    modal.style.display= "block";
+    console.log("test1 checkingdata so dispaly wll be block");
     storeData(user);
-    ok.style.display="block";
   }
+
+  else {
+    console.log("else dont show modal");
+      modal.style.display="none";
+  }
+
 }
 
 function storeData(user) {
+
   localStorage.setItem('user',JSON.stringify(user));
   var user = JSON.parse(localStorage.getItem('user'));
   console.log(user);
@@ -52,9 +50,10 @@ function storeData(user) {
 function clearData(key){
 if (localStorage.getItem(key) === null) {
     console.log("Key not found, bro!");
-  }
-  else {
+  } else {
     console.log("localstorage has been cleaned");
     localStorage.removeItem(key);
+    console.log(key);
   }
 }
+var checkUser = () => JSON.parse(localStorage.getItem('user'));

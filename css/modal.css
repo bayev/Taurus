@@ -1,0 +1,148 @@
+body { cursor: pointer;}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5da1;
+  padding-top: 50px;
+  color: goldenrod;
+  font-size: 1.5rem;
+  letter-spacing: 1px
+}
+
+.modal-content {
+  border-radius: 20px;
+  border-color: white;
+  border:2px solid;
+  color:black;
+
+  background-color: #f9f9f9;
+  background-size: cover;
+  background-position: center;
+  margin: 1% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  width: 90%; /* Could be more or less, depending on screen size */
+}
+
+.information{
+  display:flex;
+  justify-content: center;
+  text-align: center;
+  padding:5%;
+  margin:0 0 0 1%;
+
+  color:black;
+
+  min-width: 100px;
+  min-height: 50px;
+
+
+}
+
+
+/* Add padding to container elements */
+.container {
+    padding: 10%  5%;
+
+    background-image: url(/img/bginfo.png);
+    background-size: cover;
+    background-position: center;
+
+}
+/*style p */
+.firstInfo{
+font-family: 'Questrial', sans-serif;
+}
+/*Style h1*/
+.firstH {
+  font-family: 'Questrial', sans-serif;
+}
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* x for closing modal */
+.xMark {
+  padding-right: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+.close {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+}
+.close:hover, .close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+/*test slideshow*/
+
+
+#slideshow {
+  overflow: hidden;
+  height: 510px;
+  width: 728px;
+  margin: 0 auto;
+  border-radius: 0.5em;
+}
+
+.slide-wrapper {
+  width: 2912px;
+  -webkit-animation: slide 18s ease infinite;
+}
+
+.slide {
+  float: left;
+  height: 510px;
+  width: 728px;
+}
+
+.slide:nth-child(1) {
+  background: #D93B65;
+}
+
+.slide:nth-child(2) {
+  background: #037E8C;
+}
+
+.slide:nth-child(3) {
+  background: #36BF66;
+}
+
+.slide:nth-child(4) {
+  background: #D9D055;
+}
+
+.slide-number {
+  color: #000;
+  text-align: center;
+  font-size: 10em;
+}
+
+@-webkit-keyframes slide {
+  20% {margin-left: 0px;}
+  30% {margin-left: -728px;}
+  50% {margin-left: -728px;}
+  60% {margin-left: -1456px;}
+  70% {margin-left: -1456px;}
+  80% {margin-left: -2184px;}
+  90% {margin-left: -2184px;}
+}
+
+
+#slideshow img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5em;
+
+}

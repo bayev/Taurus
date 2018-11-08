@@ -1,4 +1,9 @@
-body, html{
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.edward {
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -75,6 +80,7 @@ background-color: #996675;
   .wrapper, .allContent, .topContent, .bottomContent,  {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
 }
+}
 
 @media screen and (max-width: 450px) {
  .allContent, .topContent, .bottomContent {
@@ -88,4 +94,31 @@ noscript{
   display:flex;
   font-size: 12px;
   color:white;
+}
+
+
+/* Nav etc. */
+
+.tina {
+  display: flex;
+}
+
+nav {
+  width: 10%;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: rgb(155, 155, 226);
+  height: 100vh;
+}
+
+
+ul {
+  list-style: none;
+}
+
+.notes {
+  background-color: aqua;
+  width: 15%;
+  flex-direction: column;
+  align-items: stretch;
 }

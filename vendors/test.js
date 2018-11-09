@@ -1,28 +1,40 @@
+document.getElementById("editor").addEventListener("submit",
+        function(event) {
+            console.log(Hello);
+            
+            event.preventDefault();
+            var content = document.getElementById('editor').innerHTML;
+            console.log( "this is it");
+            var numberOfListItems = listData.length;
+            console.log(musicfiles, "this is it");
+        });
+    
 
 
-function check_web_storage_support() {
-    if(typeof(Storage) !== "undefined") {
-        return(true);
-    }
-    else {
-        alert("Web storage unsupported!");
-        return(false);
-    }
-}
+
+// function check_web_storage_support() {
+//     if(typeof(Storage) !== "undefined") {
+//         return(true);
+//     }
+//     else {
+//         alert("Web storage unsupported!");
+//         return(false);
+//     }
+// }
 
 
-function save() {
-    if(check_web_storage_support() == true) {
-        var area = document.getElementById("editor");
-        console.log(area.textContent);
-        if(area.textContent != '') {
-            localStorage.setItem("note", area.textContent);
-        }
-        else {
-            alert("Nothing to save");
-        }
-    }
-}
+// function save() {
+//     if(check_web_storage_support() == true) {
+//         var area = document.getElementById("editor");
+//         console.log(area.textContent);
+//         if(area.textContent != '') {
+//             localStorage.setItem("note", area.textContent);
+//         }
+//         else {
+//             alert("Nothing to save");
+//         }
+//     }
+// }
 
 
 document.getElementById('editor').innerHTML = localStorage['text'] || 'This text is automatically saved every second :) ';

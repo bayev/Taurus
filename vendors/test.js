@@ -1,13 +1,14 @@
-document.getElementById("editor").addEventListener("submit",
-        function(event) {
-            console.log(Hello);
+
+// document.getElementById("editor").addEventListener("submit",
+//         function(event) {
+//             console.log(Hello);
             
-            event.preventDefault();
-            var content = document.getElementById('editor').innerHTML;
-            console.log( "this is it");
-            var numberOfListItems = listData.length;
-            console.log(musicfiles, "this is it");
-        });
+//             event.preventDefault();
+//             var content = document.getElementById('editor').innerHTML;
+//             console.log( "this is it");
+//             var numberOfListItems = listData.length;
+//             console.log(musicfiles, "this is it");
+//         });
     
 
 
@@ -38,12 +39,13 @@ document.getElementById("editor").addEventListener("submit",
 
 
 document.getElementById('editor').innerHTML = localStorage['text'] || 'This text is automatically saved every second :) ';
+document.getElementById("submit").onclick = function () { localStorage['text'] = document.getElementById('editor').innerHTML;
+}
 
- setInterval(function() {
-      localStorage['text'] = document.getElementById('editor').innerHTML;
 
- }, 100);
- /*
+
+
+/*
 var index = {
     nextFreeIndex: 4,
     lastOpened: 'text0',

@@ -1,0 +1,281 @@
+html
+{
+  font-family: sans-serif;
+  z-index: 0;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  -webkit-background-size:cover;
+  background-size: cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  position: fixed;
+  font-size: 20px;
+
+}
+
+ul
+{
+  list-style: none;
+}
+
+body
+{
+  font-family: sans-serif;
+  width: 100%;
+  overflow:hidden;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  position: relative;
+}
+
+#logoimg
+{
+  width:5%;
+}
+
+#topbackground
+{
+  width: 100%;
+  z-index: 1;
+  background-color: ;
+  position: relative;
+}
+
+
+#navbar-top
+{
+  width:100%;
+  padding: 10px;
+  background-color: black;
+  z-index: 1;
+  position: relative;
+  opacity: 0.8;
+}
+
+#background
+{
+  width: 100%;
+  z-index:1;
+  position: fixed;
+}
+
+#scroller_body
+{
+  height:90%;
+  width:20%;
+  float:left;
+  border-radius: 20px;
+  border-color: blue;
+  background-color:black;
+  margin-right:150%;
+  z-index: 1;
+  position: fixed;
+  opacity: 0.5;
+  overflow-y:hidden;
+  overflow-y:scroll;
+}
+
+#collapsescrollerID
+{
+  margin-bottom: 10px;
+
+}
+
+#scroller_content
+{
+
+
+  width:20%;
+  float:left;
+  z-index:3;
+  border:3px;
+  border-radius: 3px;
+  border-color: black;
+  overflow-y:scroll;
+  position: fixed;
+}
+
+#blocks
+{
+
+}
+
+#scroller-player-bottom
+{
+  height: 30%;
+  width: 50%;
+  background-color: purple;
+  z-index: 1;
+  position: absolute;
+  opacity: 0.4;
+  margin-left:30%;
+  margin-right:;
+  margin-top: 35%;
+}
+
+#submit-form-right
+{
+height:auto;
+width:25%;
+float:right;
+border-radius:15px;
+ background-color: teal;
+ position:static;
+ z-index: 1;
+ opacity:0.9;
+ padding-left: 30px;
+ padding-bottom:20px;
+}
+
+input[type=file]
+{
+  margin-left: 20px;
+}
+
+input[type=submit]
+{
+  margin-top: 20px;
+  margin-left:1%;
+}
+
+input[type=text] {
+    width: 95%;
+    padding: 10px 10px;
+    margin: 4px 4px;
+    box-sizing: border-box;
+    border-radius:20px;
+    border-color:black;
+    border-spacing: 2px;
+
+}
+
+#img1
+{
+  z-index: 0;
+  position: fixed;
+}
+
+
+.background-appeal
+{
+
+}
+
+.stuct-form
+{
+  border:3px solid;
+  border-radius: 3px , 5px;
+  padding:200px;
+  padding-left: 200px;
+
+}
+
+.struct-scrollercontent
+{
+  border-radius: 15px;
+  border-style:groove;
+  width:auto;
+  height:15%;
+  background-color: teal;
+  z-index: 2;
+
+}
+
+.struct-scroller
+{
+
+  border: 2px solid;
+  border-radius: 5px , 5px;
+  border-color: black;
+  box-shadow: 3px 3px 3px 1px black;
+  z-index: 1;
+
+}
+
+.myButton
+{
+  -webkit-box-shadow: 2px 3px 4px 1px #af6d0a;
+  background:linear-gradient(to bottom, #db7e02 5%, #c3800e 100%);
+  background-color:#c67fd4;
+  -webkit-border-radius:14px;
+  border-radius:14px;
+  border:1px solid #820d82;
+  display:inline-block;
+  cursor:pointer;
+  color:rgba(186, 93, 25, 0.7);
+  font-family:Arial;
+  font-size:17px;
+  font-weight:bold;
+  padding:8px 28px;
+  text-decoration:none;
+  text-shadow:0px 0px 0px #394085;
+}
+.myButton:hover {
+  background:linear-gradient(to bottom,  #c3800e 5%, #d4bb13 100%);
+  background-color:#080708;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
+
+
+.collapseButton
+{
+  -webkit-box-shadow: 2px 3px 4px 1px #af6d0a;
+  background:linear-gradient(to bottom, #db7e02 30%, #A33340 100%);
+  /* background-color:#c67fd4; */
+  -webkit-border-radius:14px;
+  border-radius:90px;
+  border:2px solid #820d82;
+  display:inline-block;
+  cursor:pointer;
+  color:rgba(186, 93, 25, 0.7);
+  font-family:Arial;
+  font-size:17px;
+  font-weight:bold;
+  padding:20px 5px;
+  text-decoration:;
+  text-shadow:0px 0px 0px #394085;
+}
+.collapseButton:hover {
+  background:linear-gradient(to bottom,  #c3800e 5%, #d4bb13 100%);
+  background-color:#080708;
+}
+.collapseButton:active {
+  position:relative;
+  top:1px;
+}
+
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+
+
+
+/* ////////////////////////////////// COLLAPSE GREJ */
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.collapse {
+  display: block;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .5s cubic-bezier(0, 1, 0, 1);
+
+.show {
+    max-height: 99em;
+    transition: max-height .5s ease-in-out;
+  }
+}

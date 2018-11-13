@@ -3,13 +3,13 @@
   padding: 0;
 }
 
-.wrapper{
+.wrapper {
   /* margin: 0;
   padding: 0; */
   font-size: 16px;
   font-family: 'Roboto', cursive;
-  width:100vw;
-  height:100vh;
+  width: 100vw;
+  height: 100vh;
   overflow-y: hidden;
   overflow-x: hidden;
   position: fixed;
@@ -22,78 +22,54 @@ header {
   height: auto;
 }
 
-.inContent{
+.inContent {
   text-align: center;
-  padding:5%;
-  margin:0 0 0 1%;
-  background-color:#FD556E ;
+  padding: 5%;
+  margin: 0 0 0 1%;
+  background-color: #FD556E;
   border-radius: 10px;
-  color:teal;
-  border:2px solid;
+  color: teal;
+  border: 2px solid;
   min-width: 100px;
   min-height: 50px;
-    border: 2px solid;
-    border-color: darkred;
-    transition: .5s;
+  border: 2px solid;
+  border-color: darkred;
+  transition: .5s;
 }
 
-.myButton {
-position: absolute;
-color: black;
-font-size: 18px;
-line-height: 18px;
-padding: 7px;
- border-radius: 16px;
-font-family: Georgia, serif;
-font-weight: normal;
-text-decoration: none;
-font-style: normal;
-font-variant: normal;
-text-transform: none;
-background-color: #996675;
- border: 1px solid ;
- display: inline-block;
- margin:10px;
- margin-left: 35%;
- animation: fades 1s;
-}
 
-.myButton:hover { transform: scale(1.13); transition: 1s; }
 
-@keyframes flyingr {  0% { margin-left: 90%;  } }
-@keyframes flyingl {  0% { margin-right: 90%; } }
-@keyframes fades { 0% {opacity: 0; margin-top:90%;} 40%{opacity:0.5;}}
 
 
 @media screen and (max-width: 1000px) {
   .wrapper, .allContent, .topContent, .bottomContent {
-    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    width: 100%;
+    /* The width is 100%, when the viewport is 800px or smaller */
   }
 }
 
 @media screen and (max-width: 800px) {
-  .wrapper, .allContent, .topContent, .bottomContent  {
-    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-}
+  .wrapper, .allContent, .topContent, .bottomContent {
+    width: 100%;
+    /* The width is 100%, when the viewport is 800px or smaller */
+  }
 }
 
 @media screen and (max-width: 450px) {
- .allContent, .topContent, .bottomContent {
-    width: 100%; /* The width is 100%, when the viewport is 450px or smaller */
+  .allContent, .topContent, .bottomContent {
+    width: 100%;
+    /* The width is 100%, when the viewport is 450px or smaller */
   }
-
 }
 
-noscript{
+noscript {
   justify-content: center;
-  display:flex;
+  display: flex;
   font-size: 12px;
-  color:white;
+  color: white;
 }
-
 
 /* Nav etc. */
-
 .tina {
   display: flex;
 }
@@ -119,4 +95,10 @@ ul {
   width: 15%;
   flex-direction: column;
   align-items: stretch;
+}
+
+/*quill style */
+
+.quillText{
+  width:100vw;
 }

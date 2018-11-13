@@ -38,10 +38,10 @@
 // }
 
 // SAVE AND LOAD BUTTON CODED
-document.getElementById('editor').innerHTML = localStorage['text'] || 'This text is automatically saved every second :) ';
-document.getElementById("submit").onclick = function () { 
-    localStorage['text'] = document.getElementById('editor').innerHTML;
-}
+// document.getElementById('editor').innerHTML = localStorage['text'] || 'This text is automatically saved every second :) ';
+// document.getElementById("submit").onclick = function () { 
+//     localStorage['text'] = document.getElementById('editor').innerHTML;
+// }
 
 
 // document.getElementById("submit").onclick = function() {
@@ -54,9 +54,28 @@ document.getElementById("submit").onclick = function () {
 // document.getElementById("submit").onclick = function() {
 //     var objTo = document.getElementById("myDiv");
 //     var divNew = document.createElement("div");
-//     divNew.innerHTML = document.getElementById("editor").textContent;
+//     var createlink = document.createElement("a");
+//     var skapa = document.createAttribute("href");    
+//     console.log("gelp");
 //     objTo.appendChild(divNew);
+//     objTo.append(createlink);
+//     createlink.innerHTML = document.getElementById("editor").textContent;
+
 // }
+
+document.getElementById("submit").onclick = function() {
+    var objTo = document.getElementById("myDiv");
+    var divNew = document.createElement("div");
+   
+    var createlink = document.createElement("a");
+    var skapa = document.createAttribute("href");    
+
+    objTo.appendChild(divNew, createlink);
+
+
+    objTo.innerHTML = document.getElementById("editor").textContent;
+
+}
 
 
 /*

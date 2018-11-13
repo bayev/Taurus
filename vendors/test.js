@@ -37,12 +37,26 @@
 //     }
 // }
 
-
+// SAVE AND LOAD BUTTON CODED
 document.getElementById('editor').innerHTML = localStorage['text'] || 'This text is automatically saved every second :) ';
-document.getElementById("submit").onclick = function () { localStorage['text'] = document.getElementById('editor').innerHTML;
+document.getElementById("submit").onclick = function () { 
+    localStorage['text'] = document.getElementById('editor').innerHTML;
 }
 
 
+// document.getElementById("submit").onclick = function() {
+//     var li = document.createElement("list");
+//     var inputValue = document.getElementById("editor").innerHTML;
+//     var t = document.createTextNode(inputValue);
+//     li.appendChild(t);
+// }
+
+// document.getElementById("submit").onclick = function() {
+//     var objTo = document.getElementById("myDiv");
+//     var divNew = document.createElement("div");
+//     divNew.innerHTML = document.getElementById("editor").textContent;
+//     objTo.appendChild(divNew);
+// }
 
 
 /*

@@ -72,7 +72,7 @@ background-color: #996675;
 }
 
 @media screen and (max-width: 800px) {
-  .wrapper, .allContent, .topContent, .bottomContent,  {
+  .wrapper, .allContent, .topContent, .bottomContent  {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
 }
 }

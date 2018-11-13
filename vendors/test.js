@@ -51,31 +51,33 @@
 //     li.appendChild(t);
 // }
 
-// document.getElementById("submit").onclick = function() {
-//     var objTo = document.getElementById("myDiv");
-//     var divNew = document.createElement("div");
-//     var createlink = document.createElement("a");
-//     var skapa = document.createAttribute("href");    
-//     console.log("gelp");
-//     objTo.appendChild(divNew);
-//     objTo.append(createlink);
-//     createlink.innerHTML = document.getElementById("editor").textContent;
-
-// }
+//      document.getElementById("submit").onclick = function() {
+//      var objTo = document.getElementById("myDiv"); //DIVEN I HTML
+//      var divNew = document.createElement("div");    //ADDERAR EN NY DIV
+//      var createlink = document.createAttribute("href");
+//      var skapa = document.createAttribute("href"); 
+//      divNew.innerHTML = document.getElementById("editor").textContent; //KOPIERAR TEXTEN I EDITORN OCH TILLÄGGER I DIVEN.
+//      objTo.appendChild(divNew, createlink);
+//  }
 
 document.getElementById("submit").onclick = function() {
-    var objTo = document.getElementById("myDiv");
-    var divNew = document.createElement("div");
-   
-    var createlink = document.createElement("a");
-    var skapa = document.createAttribute("href");    
+    var mydiv = document.getElementById("myDiv");
+    var newDiv = document.createElement("div");
+    var aTag = document.createElement('a');
 
-    objTo.appendChild(divNew, createlink);
+    aTag.setAttribute('href',"yourlink.htm");
+    aTag.innerHTML = prompt("Whats the Title of you notes?");
 
+    mydiv.appendChild(newDiv);
+    mydiv.appendChild(aTag);
 
-    objTo.innerHTML = document.getElementById("editor").textContent;
-
+    localStorage.setItem("test", editor.textContent);
 }
+
+window.onload = function(){
+    test.innerHTML = localStorage.getItem("test");
+}
+    
 
 
 /*

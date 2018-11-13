@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-.edward {
+.wrapper {
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -12,6 +12,7 @@
   height:100vh;
   overflow-y: hidden;
   overflow-x: hidden;
+  position: fixed;
 }
 
 header {
@@ -19,11 +20,6 @@ header {
   margin:0;
   width: 100vw;
   height: auto;
-}
-.wrapper{
-  height:100vh;
-  width:100vw;
-  position: fixed;
 }
 
 .inContent{
@@ -116,7 +112,7 @@ ul {
 }
 
 .notes {
-  background-color: aqua;
+  background-color: rgb(176, 176, 223);
   width: 15%;
   flex-direction: column;
   align-items: stretch;

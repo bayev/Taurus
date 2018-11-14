@@ -1,25 +1,25 @@
-body, html{
+* {
   margin: 0;
   padding: 0;
+}
+
+.wrapper{
+  /* margin: 0;
+  padding: 0; */
   font-size: 16px;
   font-family: 'Roboto', cursive;
   width:100vw;
   height:100vh;
   overflow-y: hidden;
   overflow-x: hidden;
-  cursor: pointer;
+  position: fixed;
 }
 
 header {
-  padding:0;
-  margin:0;
+  /* padding:0;
+  margin:0; */
   width: 100vw;
   height: auto;
-}
-.wrapper{
-  height:100vh;
-  width:100vw;
-  position: fixed;
 }
 
 .inContent{
@@ -72,8 +72,9 @@ background-color: #996675;
 }
 
 @media screen and (max-width: 800px) {
-  .wrapper, .allContent, .topContent, .bottomContent,  {
+  .wrapper, .allContent, .topContent, .bottomContent  {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+}
 }
 
 @media screen and (max-width: 450px) {
@@ -88,4 +89,55 @@ noscript{
   display:flex;
   font-size: 12px;
   color:white;
+}
+
+
+/* Nav etc. */
+
+.tina {
+  display: flex;
+}
+
+nav {
+  width: 15%;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: rgb(155, 155, 226);
+  height: 100vh;
+}
+
+.navi {
+  font-size: 230%;
+}
+
+ul {
+  list-style: none;
+}
+
+.notes {
+  background-color: rgb(192, 192, 192);
+  width: 20%;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.quillText
+{
+}
+
+
+#myDiv{
+  display:inline-block;
+  position: fixed;
+  z-index: 10;
+  opacity: 0.9;
+  margin-top:0;
+  margin-left: 27%;
+}
+
+#moveBtn{
+display:flex;
+padding:10px;
+margin-bottom:20px;
+z-index: 2;
 }

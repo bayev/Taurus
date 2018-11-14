@@ -1,0 +1,101 @@
+<!Doctype html>
+
+
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/css.css">
+  <title>Music page</title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+
+
+<img src="/images/neonflames.png" id="img1"  />
+  <!-- background top minor  -->
+  <div id="topbackground">
+
+
+    <div class="" id="navbar-top">
+      <div id ="nav-logo">
+
+        <img id="logoimg" src = "images/KYH-logonewnew.png"  />
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+ <!-- Background-major                      v      -->
+  <div class="background-appeal" id="background">
+  <button id="collapsescrollerID" class="collapseButton" onclick="collapseScroller()" > Collapse </button>
+
+    <div class="struct-scroller" id="scroller_body">
+
+
+
+    </div>
+
+    <div class="struct-form" id="submit-form-right" >
+      <p>
+        <u>   Upload Your music now with this quick Uploader!</u>
+      </p>
+
+      <form id="form" action="" method="get">
+        <label for="pname"> Your name: </label>
+         <input id="pname" type="text" name="Pname" value="" required >
+
+         <label for="sname"> Songs name: </label>
+         <input id="sname" type="text" name="Sname" value="" required > <br />
+
+         <label for="sgenre"> Song genre: </label>
+        <input id="sgenre" type="text" name="Sgenre" value="" optional > <br />
+
+        <label for="rndinfo"> Misc info: </label>
+        <fieldset   draggable="true">
+          <input type="text" name="rdninfo" optional  />
+        </fieldset>
+
+        <label for="musicfile">Upload your song! <br /> </label>
+         <input class="" id="musicfile" type="file"  name="music" value="" accept=".mp3"  > <br />
+          <input class="myButton " type="submit" value="Submit">
+      </form>
+
+
+    </div>
+
+
+
+    <div class=" " id="scroller-player-bottom">
+
+      <div id="music-player">
+
+      </div>
+
+      <div id ="player-picture">
+
+      </div>
+
+      <div id ="form-input-text">
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+
+  <script type="text/javascript" src="js/js1.js"></script>
+</body>
+
+
+
+
+
+</html>

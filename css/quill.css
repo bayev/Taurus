@@ -8,9 +8,11 @@
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 13px;
-  height: 100%;
-  margin: 0px;
+  height: 90vh;
+  width: 80vw;
   position: relative;
+  opacity: 0.9;
+  z-index: auto;
 }
 .ql-container.ql-disabled .ql-tooltip {
   visibility: hidden;
@@ -850,6 +852,7 @@
   box-sizing: border-box;
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   padding: 8px;
+  opacity:0.9;
 }
 .ql-toolbar.ql-snow .ql-formats {
   margin-right: 15px;

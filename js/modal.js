@@ -57,4 +57,3 @@ if (localStorage.getItem(key) === null) {
   }
 }
 var checkUser = () => JSON.parse(localStorage.getItem('user'));
-

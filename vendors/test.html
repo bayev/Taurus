@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Include stylesheet -->
     <link href="css/quill.css" rel="stylesheet">
+    <link href="/css/modal.css" rel="stylesheet">
+
     <link href="test.css" rel="stylesheet">
 
     <title>Document</title>
@@ -29,11 +31,14 @@
   <div id="editor">
 
   </div>
-</div>
-</div>
-
-
   <input class="myButton" type="submit" id="submit">
+</div>
+</div>
+
+
+
+
+
 
   <!-- Include the Quill library -->
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
@@ -45,5 +50,43 @@
       theme: 'snow'
     });
   </script>
+
+  
+</div>
+
+<div id="form" class="modal">
+  <div class="xMark">
+    <span onclick="document.getElementById('form').style.display='none', checkdivs(1)" class="close" title="Close Modal">&times;</span>
+  </div>
+  <form class="modal-content">
+    <div class="container">
+        <h2 class="firstH">Welcome to Quire</h2> <br />
+        <div class="information">
+
+          <p class="firstInfo">
+            A free online text notepad.
+            What can you do?
+            Create different notepages and scribble down your notes.
+            Save them and it will be stored in Quire. Come back anytime you would like and edit, delete, structure your content.
+            All notes are dated automatically from when you edit in them. You have an really easy overview of when you created something.
+            Mark you note with a star to bookmark it. So you can more easily navigate to your marked page.
+          </p>
+
+
+
+      </div>
+              <div id="slideshow">
+          <div class="slide-wrapper">
+            <div class="slide"><img src="https://weblearn.ox.ac.uk/library/image/help/en/What-is-the-Rich-Text-Editor-/Rich-Text-Editor-Toolbar.png" alt="text editor"></div>
+            <div class="slide"><img src="https://developer.atlassian.com/server/jira/platform/images/mnstr378-tut1.jpg" alt="saved document"></div>
+            <div class="slide"><img src="https://www.jqueryscript.net/images/Rich-Text-Editor-jQuery-RichText.jpg" alt="closed up picture text editor"></div>
+              <div class="slide"><img src="
+                https://d2.alternativeto.net/dist/s/froala_334261_full.jpg?format=jpg&width=1600&height=1600&mode=min&upscale=false" alt="Function"></div>
+
+          </div>
+        </div>
+    </div>
+  </form>
+  <script src="/js/modal.js"></script>
 </body>
 </html>

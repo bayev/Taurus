@@ -1,6 +1,5 @@
 
 window.onload = function (){
-  var store = document.getElementById('editor').innerHTML = localStorage['text'] || 'This text is automatically saved every second :) ';
   var fix = document.getElementById('editor');
   fix.setAttribute("contenteditable", "true");
 
@@ -22,7 +21,7 @@ var quill = new Quill('#editor', {
   modules: {
     toolbar: false
   },
-  placeholder: 'Compose an epic...',
+  placeholder: 'Comp',
   theme: 'snow',
 });
 

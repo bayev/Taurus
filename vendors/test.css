@@ -1,0 +1,27 @@
+/* Nav etc. */
+* {
+    padding: 0;
+    margin:0;
+}
+.tina {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+
+  }
+  
+  nav {
+    width: 15%;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: rgb(155, 155, 226);
+    height: 100vh;
+  }
+  
+  .navi {
+    font-size: 230%;
+  }
+  
+  ul {
+    list-style: none;
+  }

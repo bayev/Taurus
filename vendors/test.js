@@ -60,23 +60,23 @@
 //      objTo.appendChild(divNew, createlink);
 //  }
 
-document.getElementById("submit").onclick = function() {
-    var mydiv = document.getElementById("myDiv");
-    var newDiv = document.createElement("div");
-    var aTag = document.createElement('a');
+// document.getElementById("submit").onclick = function() {
+//     var mydiv = document.getElementById("myDiv");
+//     var newDiv = document.createElement("div");
+//     var aTag = document.createElement('a');
 
-    aTag.setAttribute('href',"yourlink.htm");
-    aTag.innerHTML = prompt("Whats the Title of you notes?");
+//     aTag.setAttribute('href',"yourlink.htm");
+//     aTag.innerHTML = prompt("Whats the Title of you notes?");
 
-    mydiv.appendChild(newDiv);
-    mydiv.appendChild(aTag);
+//     mydiv.appendChild(newDiv);
+//     mydiv.appendChild(aTag);
 
-    localStorage.setItem("test", editor.textContent);
-}
+//     localStorage.setItem("test", editor.textContent);
+// }
 
-window.onload = function(){
-    test.innerHTML = localStorage.getItem("test");
-}
+// window.onload = function(){
+//     test.innerHTML = localStorage.getItem("test");
+// }
     
 
 

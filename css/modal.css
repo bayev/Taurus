@@ -35,9 +35,7 @@
   text-align: center;
   padding:5%;
   margin:0 0 0 1%;
-  background-color:#FD556E ;
   color:black;
-
   min-width: 100px;
   min-height: 50px;
 
@@ -73,7 +71,8 @@ font-family: 'Questrial', sans-serif;
 .xMark {
   padding-right: 20px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
+  margin:auto;
 }
 .close {
     font-size: 40px;

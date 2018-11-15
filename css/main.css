@@ -100,7 +100,7 @@ noscript{
 
 .logo img {
   max-width: 60px; 
-  margin-top: 6px;
+  margin-top: 10px;
   margin-left: 10px;
 }
 
@@ -109,9 +109,10 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: rgb(155, 155, 226);
+  background-color: rgb(253, 249, 243);
   height: 100vh;
 }
+
 .navi,
 .infoicon {
   font-size: 230%;

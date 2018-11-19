@@ -1,5 +1,3 @@
-
-
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -96,7 +94,7 @@ font-family: 'Questrial', sans-serif;
 
 .slide-wrapper {
   width: 2912px;
-  -webkit-animation: slide 18s ease infinite;
+  animation: slide 18s ease infinite;
 }
 
 .slide {
@@ -127,7 +125,7 @@ font-family: 'Questrial', sans-serif;
   font-size: 10em;
 }
 
-@-webkit-keyframes slide {
+@keyframes slide {
   20% {margin-left: 0px;}
   30% {margin-left: -728px;}
   50% {margin-left: -728px;}

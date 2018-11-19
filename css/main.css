@@ -7,14 +7,14 @@
     display: flex;
     }
 
-    .logo img {
-      max-width: 60px; 
+    .logo  img {
+      width: 60px; 
       margin-top: 10px;
-      margin-left: 10px;
+      margin-left: 22%;
     }
     
     nav {
-      width: 80px;
+      width: 10%;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -46,10 +46,20 @@
     }
     
     .notes {
-      /* background-color: rgb(192, 192, 192); */
-      border-left: 1px solid rgb(192, 192, 192);
-      border-right: 1px solid rgb(192, 192, 192);
+      background-color:rgb(250, 247, 192); 
+      border-left: 1px solid black  ;
+      border-right: 1px solid black;
       width: 15%;
       flex-direction: column;
       align-items: stretch;
+    }
+
+    #moveBtn {
+      display: flex;
+      justify-content: left;
+      
+    }
+
+    #submit {
+      padding: 10px;
     }

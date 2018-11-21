@@ -61,12 +61,17 @@ html {
 
     #moveBtn {
       justify-content: left;
+      display: flex;
       
     }
 
     #submit {
-      padding: 10px;
-      width: 100%;
+      padding: 20px;
+      flex: 1;
+    }
+    #load {
+      padding: 20px;
+      flex:1;
     }
 
 /* EDITOR CSS */

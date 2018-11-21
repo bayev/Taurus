@@ -1,4 +1,4 @@
-
+/* 
 window.onload = function (){
   var fix = document.getElementById('editor');
   fix.setAttribute("contenteditable", "true");
@@ -53,7 +53,7 @@ setInterval(function() {
       doc: JSON.stringify(quill.getContents())
     });
     */
-    change = new Delta();
+/*     change = new Delta();
   }
 }, 5*1000);
 
@@ -62,4 +62,34 @@ window.onbeforeunload = function() {
   if (change.length() > 0) {
     return 'There are unsaved changes. Are you sure you want to leave?';
   }
+} */
+
+
+/* TEST */
+
+document.getElementById("submit").addEventListener("click", notesBoard);
+document.getElementById("load").addEventListener("click", notesLoad);
+
+
+
+
+function notesBoard() {
+  localStorage.text = document.getElementById('editor').innerHTML;
+  
+  console.log('textSave');
 }
+
+
+
+function notesLoad() {
+  let x = localStorage['text'];
+  document.getElementById('editor').innerHTML = x;
+  
+  console.log('NotesLoaded');
+
+}
+
+
+/* function notesIndex() {
+
+} */

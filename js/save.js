@@ -67,7 +67,7 @@ window.onbeforeunload = function() {
 
 /* TEST */
 
-document.getElementById("submit").addEventListener("click", notesBoard);
+/* document.getElementById("submit").addEventListener("click", notesBoard);
 document.getElementById("load").addEventListener("click", notesLoad);
 
 
@@ -87,9 +87,48 @@ function notesLoad() {
   
   console.log('NotesLoaded');
 
-}
+} */
 
 
 /* function notesIndex() {
 
 } */
+
+
+/* TEST 2 */
+document.getElementById("submit").addEventListener("click", save);
+
+var text = document.getElementById("editor").innerHTML;
+
+function notesBoard() {
+  localStorage.text = document.getElementById('editor').innerHTML;
+  
+  console.log('textSave');
+}
+
+
+
+function notesLoad() {
+  let x = localStorage['text'];
+  document.getElementById('editor').innerHTML = x;
+  
+  console.log('NotesLoaded');
+}
+
+
+function save() {
+notesBoard();
+var mydiv = document.getElementById("notes");
+var newDiv = document.createElement("div");
+var aTag = document.createElement('a');
+aTag.setAttribute('onclick', "notesLoad()");
+aTag.innerHTML = prompt("Whats the Title of you notes?");
+mydiv.appendChild(newDiv);
+mydiv.appendChild(aTag);
+  
+}
+
+
+
+
+

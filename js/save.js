@@ -117,12 +117,13 @@ function notesLoad() {
 
 
 function save() {
-notesBoard();
 var mydiv = document.getElementById("notes");
 var newDiv = document.createElement("div");
 var aTag = document.createElement('a');
 aTag.setAttribute('onclick', "notesLoad()");
-aTag.innerHTML = prompt("Whats the Title of you notes?");
+var title = prompt("Whats the title of your notes?");
+localStorage.setItem(title, notesBoard());
+aTag.innerHTML = title;
 mydiv.appendChild(newDiv);
 mydiv.appendChild(aTag);
   

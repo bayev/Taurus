@@ -96,32 +96,78 @@ function notesLoad() {
 
 
 /* TEST 2 */
+window.onload = function() {
+  updateView();
+}
 document.getElementById("submit").addEventListener("click", save);
 
 var text = document.getElementById("editor").innerHTML;
 
 function notesBoard() {
-  localStorage.text = document.getElementById('editor').innerHTML;
+  //localStorage.text = document.getElementById('editor').innerHTML;
   
   console.log('textSave');
+  return(editor.root.innerHTML);
 }
 
 
+/* [{ title: "ett",
+      contents: "Hello world x 100"},
+    { title: "två",
+      contents: "Hello world x 100"}]
+      */
 
 function notesLoad() {
-  let x = localStorage['text'];
+/*   let x = localStorage['text'];
   document.getElementById('editor').innerHTML = x;
   
-  console.log('NotesLoaded');
+  console.log('NotesLoaded'); */
+  var notes = [];
+  let obj = {};
+
+  for ( var i = 0, len = localStorage.length; i < len; ++i ) {
+    //console.log( localStorage.key( i ) + ": " + localStorage.getItem( localStorage.key( i ) ) );
+    let title = localStorage.key( i );
+    let contents = localStorage.getItem( localStorage.key( i ) );
+
+    if (title !== 'user') {
+      notes.push({title: title, contents: contents});
+    }
+  }
+  return(notes);
 }
 
+function showNote (title) {
+  editor.root.innerHTML = localStorage.getItem(title);
+  console.log(title);
+
+}
+
+
+function updateView() {
+  let notes = notesLoad();
+  notes.forEach((note) => {
+    console.log(note);
+    var mydiv = document.getElementById("notes");
+    var newDiv = document.createElement("div");
+    var aTag = document.createElement('a');
+    aTag.setAttribute('onclick', "showNote('" + note.title + "')");
+    aTag.innerHTML = note.title;
+    mydiv.appendChild(newDiv);
+    mydiv.appendChild(aTag);
+  });
+}
 
 function save() {
 var mydiv = document.getElementById("notes");
 var newDiv = document.createElement("div");
 var aTag = document.createElement('a');
 aTag.setAttribute('onclick', "notesLoad()");
+
 var title = prompt("Whats the title of your notes?");
+if (title == "user") {
+  title = "_user";
+}
 localStorage.setItem(title, notesBoard());
 aTag.innerHTML = title;
 mydiv.appendChild(newDiv);

@@ -1,70 +1,3 @@
-/* 
-window.onload = function (){
-  var fix = document.getElementById('editor');
-  fix.setAttribute("contenteditable", "true");
-
-}
-
-
-var modals = document.getElementsByClassName("quillText")[0];
-
-document.getElementById('editor').innerHTML = localStorage['text'];
-
-    document.getElementById("submit").onclick = function () {
-        localStorage['text'] = document.getElementById('editor').innerHTML;
-}
-
-
-
-var Delta = Quill.import('delta');
-var quill = new Quill('#editor', {
-  modules: {
-    toolbar: false
-  },
-  placeholder: 'Comp',
-  theme: 'snow',
-});
-
-// Store accumulated changes
-var change = new Delta();
-quill.on('text-change', function(delta) {
-  change = change.compose(delta);
-});
-
-
-// Save periodically
-setInterval(function() {
-  if (change.length() > 0) {
-    console.log('Saving changes', change);
-
-    //var test = JSON.stringify(quill.getContents());
-    //quill.setContents(JSON.parse(test));
-    console.log(user);
-
-    // JSON.stringify(quill.getContents())
-    /*
-    Send partial changes
-    $.post('/your-endpoint', {
-      partial: JSON.stringify(change)
-    });
-
-    Send entire document
-    $.post('/your-endpoint', {
-      doc: JSON.stringify(quill.getContents())
-    });
-    */
-/*     change = new Delta();
-  }
-}, 5*1000);
-
-// Check for unsaved data
-window.onbeforeunload = function() {
-  if (change.length() > 0) {
-    return 'There are unsaved changes. Are you sure you want to leave?';
-  }
-} */
-
-
 /* TEST */
 
 /* document.getElementById("submit").addEventListener("click", notesBoard);
@@ -90,26 +23,16 @@ function notesLoad() {
 } */
 
 
-/* function notesIndex() {
-
-} */
-
-
 /* TEST 2 */
 window.onload = function() {
   updateView();
 }
 document.getElementById("submit").addEventListener("click", save);
 
-var text = document.getElementById("editor").innerHTML;
-
 function notesBoard() {
   //localStorage.text = document.getElementById('editor').innerHTML;
-  
-  console.log('textSave');
   return(editor.root.innerHTML);
 }
-
 
 /* [{ title: "ett",
       contents: "Hello world x 100"},
@@ -118,12 +41,7 @@ function notesBoard() {
       */
 
 function notesLoad() {
-/*   let x = localStorage['text'];
-  document.getElementById('editor').innerHTML = x;
-  
-  console.log('NotesLoaded'); */
   var notes = [];
-  let obj = {};
 
   for ( var i = 0, len = localStorage.length; i < len; ++i ) {
     //console.log( localStorage.key( i ) + ": " + localStorage.getItem( localStorage.key( i ) ) );
@@ -137,13 +55,15 @@ function notesLoad() {
   return(notes);
 }
 
-function showNote (title) {
-  editor.root.innerHTML = localStorage.getItem(title);
+function showNote(contents) {
+  editor.root.innerHTML = localStorage.getItem(contents);
   console.log(title);
 
 }
 
-
+/* Denna funktion startas window onload
+drar in funktionen notesLoad. Allt blir organiserad som vi vill med keys som title och value som content.
+Längre ner har vi en ShowNote som är en onclick funktion. Den returnera */
 function updateView() {
   let notes = notesLoad();
   notes.forEach((note) => {
@@ -158,21 +78,25 @@ function updateView() {
   });
 }
 
+/* Denna funktion är länkad till Save knappen.
+Den skapar en ny child div, a tag till sectionen Notes.
+Vi promptar usern om en Titel och sparar titeln som en key och innehållet i editorn som en value.
+själva a taggen får samma namn som titeln.
+Efter detta så kör vi en refresh av sidan vilket gör att alla divar försvinner men inte Local Storage.
+Funktionen Update view skapar alla divar och a taggar igen. */
 function save() {
 var mydiv = document.getElementById("notes");
 var newDiv = document.createElement("div");
 var aTag = document.createElement('a');
-aTag.setAttribute('onclick', "notesLoad()");
-
 var title = prompt("Whats the title of your notes?");
-if (title == "user") {
+if (title == "user") {  
   title = "_user";
 }
 localStorage.setItem(title, notesBoard());
 aTag.innerHTML = title;
 mydiv.appendChild(newDiv);
 mydiv.appendChild(aTag);
-  
+location.reload(true);
 }
 
 

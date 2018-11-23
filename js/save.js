@@ -1,71 +1,36 @@
-/* TEST */
-
-/* document.getElementById("submit").addEventListener("click", notesBoard);
-document.getElementById("load").addEventListener("click", notesLoad);
-
-
-
-
-function notesBoard() {
-  localStorage.text = document.getElementById('editor').innerHTML;
-  
-  console.log('textSave');
-}
-
-
-
-function notesLoad() {
-  let x = localStorage['text'];
-  document.getElementById('editor').innerHTML = x;
-  
-  console.log('NotesLoaded');
-
-} */
-
-
-/* TEST 2 */
 window.onload = function() {
   updateView();
 }
-document.getElementById("submit").addEventListener("click", save);
 
-function notesBoard() {
-  //localStorage.text = document.getElementById('editor').innerHTML;
+/* EVENT Listeners */
+document.getElementById("submit").addEventListener("click", clickSave);
+
+/* Denna funktion är länkad till Save knappen.
+Det enda den gör är att spara titlen som är vad användaren skriver som title sedan sparar den även funktionen noteStored() som sin value. Den funktionen returnerar endast vad som står i editorn. 
+Reloaden triggar igång funktionen update view som är inställt på onload.
+Det är där vi skapar nya divar, a taggar etc. Kolla in den funktionen */
+function clickSave() {
+  var title = prompt("Whats the title of your notes?");
+  if (title == "user") {  
+    title = "_user";
+  }
+  localStorage.setItem(title, noteStored());
+  location.reload(true); /*Viktigt för funktionen updateView*/
+  }
+
+/* Det enda den här funktionen gör är att returnera vad det finns för innehåll i editorn. Detta är viktigt för clickSave funktionen eftersom där kör vi en setItem av innehållet. */
+
+function noteStored() {
   return(editor.root.innerHTML);
 }
 
-/* [{ title: "ett",
-      contents: "Hello world x 100"},
-    { title: "två",
-      contents: "Hello world x 100"}]
-      */
+/* Efter att clickSave funktionen är klar så laddas sidan om och updateView aktiveras. 
+Det första den gör är att kalla på funktionen noteLoad. NoteLoad är där vi tagit alla notes och pushat in det i en tomma arrayer.
+Notes blir då noteLoad(). För varje note så gör vi en div, a tag i våran section Notes.
+Attributet för a taggen på onclick blir funktionen showNote som hämtar innehållet för den title. */
 
-function notesLoad() {
-  var notes = [];
-
-  for ( var i = 0, len = localStorage.length; i < len; ++i ) {
-    //console.log( localStorage.key( i ) + ": " + localStorage.getItem( localStorage.key( i ) ) );
-    let title = localStorage.key( i );
-    let contents = localStorage.getItem( localStorage.key( i ) );
-
-    if (title !== 'user') {
-      notes.push({title: title, contents: contents});
-    }
-  }
-  return(notes);
-}
-
-function showNote(contents) {
-  editor.root.innerHTML = localStorage.getItem(contents);
-  console.log(title);
-
-}
-
-/* Denna funktion startas window onload
-drar in funktionen notesLoad. Allt blir organiserad som vi vill med keys som title och value som content.
-Längre ner har vi en ShowNote som är en onclick funktion. Den returnera */
 function updateView() {
-  let notes = notesLoad();
+  let notes = noteLoad();
   notes.forEach((note) => {
     console.log(note);
     var mydiv = document.getElementById("notes");
@@ -78,26 +43,44 @@ function updateView() {
   });
 }
 
-/* Denna funktion är länkad till Save knappen.
-Den skapar en ny child div, a tag till sectionen Notes.
-Vi promptar usern om en Titel och sparar titeln som en key och innehållet i editorn som en value.
-själva a taggen får samma namn som titeln.
-Efter detta så kör vi en refresh av sidan vilket gör att alla divar försvinner men inte Local Storage.
-Funktionen Update view skapar alla divar och a taggar igen. */
-function save() {
-var mydiv = document.getElementById("notes");
-var newDiv = document.createElement("div");
-var aTag = document.createElement('a');
-var title = prompt("Whats the title of your notes?");
-if (title == "user") {  
-  title = "_user";
+/* Notes är en tom array.
+Vi gör en let = title för varje key som vi redan fått sparat av användaren där vi promptade hen om det. 
+Let = contents så tog vi getItem av den keyn. 
+Sedan pushar vi det i två tomma arrayer. Som title är keyn och contents är innehållet.
+Den kör om detta tills den pushat in alla och sedan returnerar den notes som sedan updateView sorterar ut i divs och a taggar. */
+
+/* [{ title: "ett",
+      contents: "Hello world x 100"},
+    { title: "två",
+      contents: "Hello world x 100"}]
+      */
+
+function noteLoad() {
+  var notes = [];
+
+  for ( var i = 0, len = localStorage.length; i < len; ++i ) {
+    //console.log( localStorage.key( i ) + ": " + localStorage.getItem( localStorage.key( i ) ) );
+    let title = localStorage.key( i );
+    let contents = localStorage.getItem(title);
+
+    if (title !== 'user') {
+      notes.push({title: title, contents: contents});
+    }
+  }
+  return(notes);
 }
-localStorage.setItem(title, notesBoard());
-aTag.innerHTML = title;
-mydiv.appendChild(newDiv);
-mydiv.appendChild(aTag);
-location.reload(true);
+
+/* Show note funktionen hämtar innehållet från det där id:et. Jag förstår inte hur? Vad kallar argumentet på? Hur fattar den att argumentet är key? */
+
+function showNote(contents) {
+  editor.root.innerHTML = localStorage.getItem(contents);
+  console.log(title);
+
 }
+
+
+
+
 
 
 

@@ -139,3 +139,20 @@ html {
 .quill-wrap button, .quill-wrap .ql-picker {
   margin-right:2px
 }
+
+/*PRINT CSS*/
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #editor * {
+    visibility: visible;
+  }
+  #editor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}

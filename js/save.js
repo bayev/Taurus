@@ -76,21 +76,3 @@ function noteLoad() {
 function showNote(contents) {
   editor.root.innerHTML = localStorage.getItem(contents);
 }
-
-/* Den här koden tar editorns inner html och endast den texten och ger användaren en chans att skriva ut anteckningen. */
-
-function printArea() {
-  var printContents = editor.root.innerHTML;  
-  document.body.innerHTML = printContents;
-
-  window.print();
-  location.reload(true);
-}	
-
-
-
-
-
-
-
-

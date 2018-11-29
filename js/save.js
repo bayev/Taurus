@@ -15,7 +15,7 @@ function clickSave() {
     title = "_user";
   }
   localStorage.setItem(title, noteStored());
-  location.reload(true); /*Viktigt för funktionen updateView*/
+  updateView(); /*Viktigt för funktionen updateView*/
   }
 
 

@@ -1,164 +1,164 @@
 /* Nav etc. */
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 html {
-  height: 100%;
+height: 100%;
 }
 
 
 .tina {
+  display: flex;
+  height: 97vh;
+  }
+
+  .logo  img {
+    width: 60%; 
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  
+  nav {
     display: flex;
-    height: 97vh;
-    }
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-around;
+    background-color: rgb(253, 249, 243);
+    height:100vh;
+  }
+  
+  .navi,
+  .infoicon {
+    font-size: 230%;
+    text-align: center;
+  }
+  
+  .navi {
+    margin-top: 20%;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  .navi li {
+    padding: 10px 0;
+  }
+  
+  .infoicon {
+    margin-top: auto;
+    padding: 10px 0;
+  }
 
-    .logo  img {
-      width: 60%; 
-      margin-top: 5%;
-      margin-left: 20%;
-      margin-right: 20%;
-    }
+
+  
+  .notes {
+    background-color:rgb(250, 247, 192); 
+    border-left: 1px solid black  ;
+    border-right: 1px solid black;
+    flex: 2;
+    flex-direction: column;   
+    display: flex;
+    width: 100%;
+    height:100vh;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .notes h3 {
+    margin-bottom: 20%;
+    font-weight: 800;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .notes a {
+    color: Blue;
+    margin: 0 2% 2% 2%;
+    border: 2px solid white;
+    width: 85%;
+    background: rgb(248, 243, 148);
+    text-align: center;
+    overflow: auto;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
+    text-decoration-line: underline;
+  }
+  .notes a:hover {
+    cursor: pointer;
+    font-style: italic;
+    font-weight: 900;
+    background: whitesmoke;
+  }
+
+  .notes a:active {
+    color: white;
+  }
+
+
+ 
+
+  #moveBtn {
+    justify-content: left;
+    display: flex;
     
-    nav {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      justify-content: space-around;
-      background-color: rgb(253, 249, 243);
-      height:100vh;
-    }
     
-    .navi,
-    .infoicon {
-      font-size: 230%;
-      text-align: center;
-    }
+  }
+
+  #submit {
+    padding: 20px;
+    flex: 5;
     
-    .navi {
-      margin-top: 20%;
-    }
-    
-    ul {
-      list-style: none;
-    }
-    
-    .navi li {
-      padding: 10px 0;
-    }
-    
-    .infoicon {
-      margin-top: auto;
-      padding: 10px 0;
-    }
-
-
-    
-    .notes {
-      background-color:rgb(250, 247, 192); 
-      border-left: 1px solid black  ;
-      border-right: 1px solid black;
-      flex: 2;
-      flex-direction: column;   
-      display: flex;
-      width: 100%;
-      height:100vh;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    .notes h3 {
-      margin-bottom: 20%;
-      font-weight: 800;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-
-    .notes a {
-      color: Blue;
-      margin: 0 2% 2% 2%;
-      border: 2px solid white;
-      width: 85%;
-      background: rgb(248, 243, 148);
-      text-align: center;
-      overflow: auto;
-      padding: 8px;
-      font-size: 14px;
-      font-weight: 400;
-      text-transform: capitalize;
-      text-decoration-line: underline;
-    }
-    .notes a:hover {
-      cursor: pointer;
-      font-style: italic;
-      font-weight: 900;
-      background: whitesmoke;
-    }
-
-    .notes a:active {
-      color: white;
-    }
-
-
-   
-
-    #moveBtn {
-      justify-content: left;
-      display: flex;
-      
-      
-    }
-
-    #submit {
-      padding: 20px;
-      flex: 5;
-      
-    }
-    #load {
-      padding: 20px;
-      flex:1;
-    }
+  }
+  #load {
+    padding: 20px;
+    flex:1;
+  }
 
 /* EDITOR CSS */
 
 .quill-wrap {
-  display: flex;
-  flex: 8;
-  flex-direction: column;
-  width: 100%;
-  height: 97vh;
+display: flex;
+flex: 8;
+flex-direction: column;
+width: 100%;
+height: 97vh;
 
 }
 .info {
-  text-align:center;
-  margin-top:20px;
+text-align:center;
+margin-top:20px;
 }
 .quill-wrap .ql-active {
-  border: 1px solid #ccc !important;
-  border-radius:4px;
+border: 1px solid #ccc !important;
+border-radius:4px;
 }
 .quill-wrap button, .quill-wrap .ql-picker {
-  margin-right:2px
+margin-right:2px
 }
 
 /*PRINT CSS*/
 
 #editor p:first-of-type {
-  text-align: center;
-  background: lightblue;
-  color: white;
+text-align: center;
+background: lightblue;
+color: white;
 }
 
 @media print {
-  body * {
-    visibility: hidden;
-  }
-  #editor * {
-    visibility: visible;
-  }
-  #editor {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-  }
+body * {
+  visibility: hidden;
+}
+#editor * {
+  visibility: visible;
+}
+#editor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
 }

@@ -10,7 +10,7 @@ Det enda den gör är att spara titlen som är vad användaren skriver som title
 Reloaden triggar igång funktionen update view som är inställt på onload.
 Det är där vi skapar nya divar, a taggar etc. Kolla in den funktionen */
 function clickSave() {
-  var title = prompt("Whats the title of your notes?");
+  var title = "<p>" + time() + "</p><p>" + prompt("Whats the title of your notes?") + "</p>";
   if (title == "user") {  
     title = "_user";
   }
@@ -23,6 +23,11 @@ function clickSave() {
 
 function noteStored() {
   return(editor.root.innerHTML);
+}
+
+function time () {
+  var ts = new Date();
+  return(ts.toLocaleString());
 }
 
 /* Efter att clickSave funktionen är klar så laddas sidan om och updateView aktiveras. 
@@ -59,14 +64,18 @@ Den kör om detta tills den pushat in alla och sedan returnerar den notes som se
 
 function noteLoad() {
   var notes = [];
-
+  /* var favs = loadFavs();// ['title1'..] */
   for ( var i = 0, len = localStorage.length; i < len; ++i ) {
     //console.log( localStorage.key( i ) + ": " + localStorage.getItem( localStorage.key( i ) ) );
     let title = localStorage.key( i );
     let contents = localStorage.getItem(title);
-
+/*     if (favs.includes(title)) { 
+      fav = true
+    } else {
+      fav = false
+    } */
     if (title !== 'user') {
-      notes.push({title: title, contents: contents});
+      notes.push({title: title, contents: contents}); /* , fav: fav */
     }
   }
   return(notes);

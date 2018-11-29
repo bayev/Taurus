@@ -142,6 +142,12 @@ html {
 
 /*PRINT CSS*/
 
+#editor p:first-of-type {
+  text-align: center;
+  background: lightblue;
+  color: white;
+}
+
 @media print {
   body * {
     visibility: hidden;

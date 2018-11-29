@@ -32,6 +32,7 @@ Attributet för a taggen på onclick blir funktionen showNote som hämtar inneh�
 
 function updateView() {
   let notes = noteLoad();
+  document.getElementById('notes').innerHTML = '<h3>My Notes<hr></h3>';
   notes.forEach((note) => {
     console.log(note);
     var mydiv = document.getElementById("notes");

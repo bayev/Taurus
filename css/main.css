@@ -58,24 +58,27 @@ height: 100%;
     background-color:rgb(250, 247, 192); 
     border-left: 1px solid black  ;
     border-right: 1px solid black;
-    flex: 3;
-    flex-direction: column;   
+    flex: 5;
+    flex-direction: column;  
+    overflow-y: scroll;
     display: flex;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     align-items: center;
   }
 
   .notes h3 {
     margin-bottom: 20%;
     font-weight: 800;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Sacramento', cursive;
+    font-size: 30px;
   }
 
   .notes a {
     margin: 0 2% 2% 2%;
     border: 2px solid white;
     width: 85%;
+    min-height: fit-content;
     background: rgb(248, 243, 148);
     text-align: center;
     overflow: auto;
@@ -94,14 +97,17 @@ height: 100%;
   }
 
   .notes p:nth-child(1) {
-    color: red;
+    color: black;
+    font-weight: 700;
+    font-family: 'Open Sans Condensed', sans-serif;
     font-size: 10px;
   }
   
   .notes p:nth-child(2) {
-    color: blue;
+    color: rgb(83, 83, 255);
     font-weight: 800;
     font-size: 22px;
+    font-family: 'Satisfy', cursive;
     text-decoration:none;
   }
 
@@ -144,6 +150,44 @@ border-radius:4px;
 .quill-wrap button, .quill-wrap .ql-picker {
 margin-right:2px
 }
+
+/*SCROLLBAR*/
+
+#notes::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+}
+
+#notes::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#notes::-webkit-scrollbar-thumb
+{
+  background-color: #c5c5b0;
+  border-radius: 3px;
+}
+
+#notes a::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+}
+
+#notes a::-webkit-scrollbar
+{
+	width: 10px;
+  background-color: #F5F5F5; 
+}
+
+
+#notes a::-webkit-scrollbar-thumb
+{
+  background-color: rgb(122,153,217);
+  border-radius: 3px;
+}
+
 
 /*PRINT CSS*/
 

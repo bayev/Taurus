@@ -1,5 +1,5 @@
 .notes {
-    background-color:rgb(250, 247, 192); 
+    background-color:rgba(239, 197, 142, 0.18); 
     border-left: 1px solid black  ;
     border-right: 1px solid black;
     width: 10em;
@@ -25,7 +25,7 @@
     border: 2px solid white;
     width: 85%;
     min-height: fit-content;
-    background: rgb(248, 243, 148);
+    background: rgba(239, 197, 142, 0.18); 
     text-align: center;
     overflow: auto;
     padding: 8px;
@@ -50,7 +50,7 @@
     }
     
     .notes p:nth-child(2) {
-    color: rgb(83, 83, 255);
+    color: rgb(0, 0, 0);
     font-weight: 800;
     font-size: 22px;
     font-family: 'Satisfy', cursive;

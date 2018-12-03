@@ -1,135 +1,88 @@
-
-window.onload = function (){
-  
-  document.getElementById("save").addEventListener('click', function() {
-    let noteObject = {};
-    noteObject.title =  'Squaredance';
-    noteObject.content = quill.root.innerhtml;
-    saveNotes(noteObject);
-  });
-  document.getElementById("newNote").addEventListener('click', function() {
-    //console.log(newNote());
-    let myNote = loadNotes();
-    quill.root.innerhtml = myNote.content;
-    myNote.push(newNote());
-    saveNotes(myNote);
-  });  
-  //var fix = document.getElementById('editor');
-  //fix.setAttribute("contenteditable", "true");
-
+window.onload = function() {
+  updateView();
 }
 
-/* New Note */
-function newNote () {
-  let noteObject = {};
-  noteObject.title =  'Squaredance';
-  noteObject.content = 'Trade slide thru';
-  return noteObject;
- console.log('new');
-  
-  /*id: 
-  title: 'Min shyssta anteckning',
-  content: 'Här står min anteckning' */
-}; 
+/* EVENT Listeners */
+document.getElementById("submit").addEventListener("click", clickSave);
 
-/* Load notes */
-
-function loadNotes (){
-  return localStorage.getItem('notes') ? JSON.parse(localStorage.getItem('notes')) : [];
-}
-
-/* save notes */
-function saveNotes (note){
-  let notes = loadNotes();
-  notes.push(note);
-  localStorage.setItem('notes', JSON.stringify(notes));
-  console.log(notes);
-}
-
-/* update notes*/
-function updateNotes (){
-  let notesSection = document.getElementsByClassName('notes').innerhtml='<h3>My Notes</h3>';
-  let notes = loadNotes();
-  notes.forEach((n) => { 
-    let newDiv = document.createElement("div"); 
-        let newP = document.createElement("p");
-        let newTitle = document.createTextNode(n.title);
-        let newContent = document.createTextNode(n.content);
-        let newButton = document.createElement("button");
-        let newButtonText = document.createTextNode('Delete me!');
-        newButton.setAttribute('onclick','deleteRecipe(' + r.id + ');');
-        newDiv.setAttribute('data-id', r.id);
-        newButton.appendChild(newButtonText);
-        newP.appendChild(newTitle);
-        newDiv.appendChild(newP);
-        newDiv.appendChild(newContent);
-        newDiv.appendChild(newButton);
-        currentSection.appendChild(newDiv);
-    //console.log(n) 
-  });
-
-}
-
-function nukeNotes () {
-  localStorage.setItem('notes', JSON.stringify([]));
-}
-//var modals = document.getElementsByClassName("quillText")[0];
-/* 
-document.getElementById('editor').innerHTML = localStorage['text'];
-
-    document.getElementById("save").onclick = function () {
-        localStorage['text'] = document.getElementById('editor').innerHTML;
-}
-
-*/
-/*
-var Delta = Quill.import('delta');
-var quill = new Quill('#editor', {
-  modules: {
-    toolbar: false
-  },
-  placeholder: 'Comp',
-  theme: 'snow',
-}); */
-
-// Store accumulated changes
-/*
-var change = new Delta();
-quill.on('text-change', function(delta) {
-  change = change.compose(delta);
-});
-*/
-
-// Save periodically
-/*
-setInterval(function() {
-  if (change.length() > 0) {
-    console.log('Saving changes', change);
-*/
-    //var test = JSON.stringify(quill.getContents());
-    //quill.setContents(JSON.parse(test));
-    //console.log(user);
-
-    // JSON.stringify(quill.getContents())
-    /*
-    Send partial changes
-    $.post('/your-endpoint', {
-      partial: JSON.stringify(change)
-    });
-
-    Send entire document
-    $.post('/your-endpoint', {
-      doc: JSON.stringify(quill.getContents())
-    });
-    */
-   /*change = new Delta();
+/* Denna funktion är länkad till Save knappen.
+Det enda den gör är att spara titlen som är vad användaren skriver som title sedan sparar den även funktionen noteStored() som sin value. Den funktionen returnerar endast vad som står i editorn. 
+Reloaden triggar igång funktionen update view som är inställt på onload.
+Det är där vi skapar nya divar, a taggar etc. Kolla in den funktionen */
+function clickSave() {
+  var title = "<p>" + time() + "</p><p>" + prompt("Whats the title of your notes?") + "</p>";
+  if (title == "user") {  
+    title = "_user";
   }
-}, 5*1000); */
-
-// Check for unsaved data
-/*
-window.onbeforeunload = function() {
-  if (change.length() > 0) {
-    return 'There are unsaved changes. Are you sure you want to leave?';
+  localStorage.setItem(title, noteStored());
+  updateView(); /*Viktigt för funktionen updateView*/
   }
-}*/
+
+
+/* Det enda den här funktionen gör är att returnera vad det finns för innehåll i editorn. Detta är viktigt för clickSave funktionen eftersom där kör vi en setItem av innehållet. */
+
+function noteStored() {
+  return(editor.root.innerHTML);
+}
+
+function time () {
+  var ts = new Date();
+  return(ts.toLocaleString());
+}
+
+/* Efter att clickSave funktionen är klar så laddas sidan om och updateView aktiveras. 
+Det första den gör är att kalla på funktionen noteLoad. NoteLoad är där vi tagit alla notes och pushat in det i en tomma arrayer.
+Notes blir då noteLoad(). För varje note så gör vi en div, a tag i våran section Notes.
+Attributet för a taggen på onclick blir funktionen showNote som hämtar innehållet för den title. */
+
+function updateView() {
+  let notes = noteLoad();
+  document.getElementById('notes').innerHTML = '<h3>My Notes</h3>';
+  notes.forEach((note) => {
+    console.log(note);
+    var mydiv = document.getElementById("notes");
+    var newDiv = document.createElement("div");
+    var aTag = document.createElement('a');
+    aTag.setAttribute('onclick', "showNote('" + note.title + "')");
+    aTag.innerHTML = note.title;
+    mydiv.appendChild(newDiv);
+    mydiv.appendChild(aTag);
+  });
+}
+
+/* Notes är en tom array.
+Vi gör en let = title för varje key som vi redan fått sparat av användaren där vi promptade hen om det. 
+Let = contents så tog vi getItem av den keyn. 
+Sedan pushar vi det i två tomma arrayer. Som title är keyn och contents är innehållet.
+Den kör om detta tills den pushat in alla och sedan returnerar den notes som sedan updateView sorterar ut i divs och a taggar. */
+
+/* [{ title: "ett",
+      contents: "Hello world x 100"},
+    { title: "två",
+      contents: "Hello world x 100"}]
+      */
+
+function noteLoad() {
+  var notes = [];
+  /* var favs = loadFavs();// ['title1'..] */
+  for ( var i = 0, len = localStorage.length; i < len; ++i ) {
+    //console.log( localStorage.key( i ) + ": " + localStorage.getItem( localStorage.key( i ) ) );
+    let title = localStorage.key( i );
+    let contents = localStorage.getItem(title);
+/*     if (favs.includes(title)) { 
+      fav = true
+    } else {
+      fav = false
+    } */
+    if (title !== 'user') {
+      notes.push({title: title, contents: contents}); /* , fav: fav */
+    }
+  }
+  return(notes);
+}
+
+/* Show note funktionen hämtar innehållet från det där id:et. Jag förstår inte hur? Vad kallar argumentet på? Hur fattar den att argumentet är key? */
+
+function showNote(contents) {
+  editor.root.innerHTML = localStorage.getItem(contents);
+}

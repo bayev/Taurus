@@ -1,65 +1,67 @@
-/* Nav etc. */
+
 * {
-    padding: 0;
-    margin:0;
+  padding: 0;
+  margin: 0;
 }
-.tina {
-    display: flex;
-    }
+html {
+height: 100vh;
+}
 
-    .logo  img {
-      width: 60px; 
-      margin-top: 10px;
-      margin-left: 22%;
-    }
-    
-    nav {
-      width: 10%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      background-color: rgb(253, 249, 243);
-      height: 100vh;
-    }
-    
-    .navi,
-    .infoicon {
-      font-size: 230%;
-      text-align: center;
-    }
-    
-    .navi {
-      margin-top: 20%;
-    }
-    
-    ul {
-      list-style: none;
-    }
-    
-    .navi li {
-      padding: 10px 0;
-    }
-    
-    .infoicon {
-      margin-top: auto;
-      padding: 10px 0;
-    }
-    
-    .notes {
-      background-color:rgb(250, 247, 192); 
-      border-left: 1px solid black  ;
-      border-right: 1px solid black;
-      width: 15%;
-      flex-direction: column;
-      align-items: stretch;
-    }
 
-    #moveBtn {
-      display: flex;
-      justify-content: left;
-      
-    }
+/*PRINT CSS*/
 
-    #submit {
-      padding: 10px;
-    }
+@media print {
+body * {
+  visibility: hidden;
+}
+#editor * {
+  visibility: visible;
+}
+#editor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .tina>section{
+    width: 10em;
+  }
+  /*.notes{
+  width: 20em;
+}*/
+  .quill-wrap {
+    width: 20em;
+   }
+
+  
+
+  
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) { 
+  .tina>section{
+    width: 40em;
+  }
+
+  /*.notes{
+    width: 20em;
+  }*/
+
+  .quill-wrap {
+    width: 20em;
+   }
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/*@media only screen and (min-width: 1200px) {
+  
+.flexcontainer2>section>article{
+      width: 35em;
+  }
+   .work {
+      grid-template-columns: repeat(2, 1fr);
+   }
+} */

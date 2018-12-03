@@ -8,6 +8,11 @@ height: 100vh;
 }
 
 
+.tina {
+  display: flex;
+  height: 100%;
+  }
+
 /*PRINT CSS*/
 
 @media print {

@@ -2,10 +2,9 @@
 
 .quill-wrap {
 display: flex;
-flex:8;
+flex: 10;
 flex-direction: column;
-width: 100%;
-height: 100%;
+height: 100vh;
 }
 
 .quill-wrap .ql-active {
@@ -21,9 +20,20 @@ text-align:center;
 margin-top:20px;
 }
 
+/* Toolbaren för editorn och självast editor CSS*/
+
+#toolbar {
+    flex: 0.5;
+}
+
+#editor {
+    flex: 9;
+}
+
 #moveBtn {
 justify-content: left;
 display: flex;
+flex: 1.5;
 width: 100%;
 height: 100%;
 margin-bottom: 2px;

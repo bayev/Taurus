@@ -6,7 +6,6 @@ flex:8;
 flex-direction: column;
 width: 100%;
 height: 100%;
-
 }
 
 .quill-wrap .ql-active {
@@ -25,12 +24,16 @@ margin-top:20px;
 #moveBtn {
 justify-content: left;
 display: flex;
+width: 100%;
+height: 100%;
+margin-bottom: 2px;
+
 }
 
 #submit {
 padding: 20px;
 flex: 5;
-height: 100%;
+
 
 }
 #load {

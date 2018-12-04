@@ -47,8 +47,69 @@ function updateView() {
     aTag.innerHTML = note.title;
     mydiv.appendChild(newDiv);
     mydiv.appendChild(aTag);
+
+    var favButton = document.createElement('button');
+    var favText = document.createTextNode('Favourite')
+    favButton.setAttribute('onclick', "toggleFav('" + note.title + "')");
+    mydiv.appendChild(favButton);
+    favButton.appendChild(favText);
+
+    var delBtn = document.createElement('button');
+    var delText = document.createTextNode('Delete')
+    delBtn.setAttribute('onclick', "delDiv('" + note.title + "')");
+    mydiv.appendChild(delBtn);
+    delBtn.appendChild(delText);
+
+  /*     let aatag = document.createElement('a');
+      let pix = document.createElement('img');
+
+      pix.setAttribute("src", "http://www.google.co.in/images/nav_logo91.png");
+
+      aatag.appendChild(pix);
+
+      aatag.setAttribute("href", "www.google.se");
+
+      mydiv.appendChild(aatag); */
+
+
+
+
   });
 }
+
+function delDiv(title){
+  localStorage.removeItem(title);
+  updateView();
+}
+
+let favs = [];
+
+function toggleFav(title) { //byt namn till toggleFav
+  console.log(title);
+  // if favs.includes(title) Betyder att den redan fanns.
+  favs.push(title);
+
+  console.log(favs);
+
+}
+function favLoad () {
+  // load form localstorage
+  return ["<p>2018-12-04 14:58:21</p><p>Test1</p>"];
+
+}
+function favSave (favs) {
+  //save to localStorage
+}
+
+
+/*   noteLoad();
+  if (notes.includes(content)) {
+    content = true
+  } else {
+    content = false
+  }
+   */
+
 
 /* Notes är en tom array.
 Vi gör en let = title för varje key som vi redan fått sparat av användaren där vi promptade hen om det. 
@@ -64,18 +125,19 @@ Den kör om detta tills den pushat in alla och sedan returnerar den notes som se
 
 function noteLoad() {
   var notes = [];
-  /* var favs = loadFavs();// ['title1'..] */
+/*   var favs = loadFavs(); // ['title1'..] */
   for ( var i = 0, len = localStorage.length; i < len; ++i ) {
     //console.log( localStorage.key( i ) + ": " + localStorage.getItem( localStorage.key( i ) ) );
     let title = localStorage.key( i );
     let contents = localStorage.getItem(title);
-/*     if (favs.includes(title)) { 
+    let favs = favLoad();
+     if (favs.includes(title)) { 
       fav = true
     } else {
       fav = false
-    } */
+    } 
     if (title !== 'user') {
-      notes.push({title: title, contents: contents}); /* , fav: fav */
+      notes.push({title: title, contents: contents, fav: fav }); /* , fav: fav */
     }
   }
   return(notes);

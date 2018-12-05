@@ -18,7 +18,7 @@ font-family: 'Sacramento', cursive;
 font-size: 30px;
 }
 
-.notes a {
+.notes div {
 margin: 0 2% 2% 2%;
 border: 2px solid white;
 width: 85%;
@@ -74,19 +74,19 @@ text-decoration:none;
   border-radius: 3px;
 }
 
-#notes a::-webkit-scrollbar-track
+#notes div::-webkit-scrollbar-track
 {
 	background-color: #F5F5F5;
 }
 
-#notes a::-webkit-scrollbar
+#notes div::-webkit-scrollbar
 {
 	width: 10px;
   background-color: #F5F5F5; 
 }
 
 
-#notes a::-webkit-scrollbar-thumb
+#notes div::-webkit-scrollbar-thumb
 {
   background-color: rgb(122,153,217);
   border-radius: 3px;

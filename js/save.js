@@ -40,24 +40,26 @@ function updateView() {
   document.getElementById('notes').innerHTML = '<h3>My Notes</h3>';
   notes.forEach((note) => {
     console.log(note);
-    var mydiv = document.getElementById("notes");
+    var myDiv = document.getElementById("notes");
     var newDiv = document.createElement("div");
     var aTag = document.createElement('a');
+
     aTag.setAttribute('onclick', "showNote('" + note.title + "')");
     aTag.innerHTML = note.title;
-    mydiv.appendChild(newDiv);
-    mydiv.appendChild(aTag);
+    
+    myDiv.appendChild(newDiv);
+    newDiv.appendChild(aTag);
 
     var favButton = document.createElement('button');
     var favText = document.createTextNode('Favourite')
     favButton.setAttribute('onclick', "toggleFav('" + note.title + "')");
-    mydiv.appendChild(favButton);
+    newDiv.appendChild(favButton);
     favButton.appendChild(favText);
 
     var delBtn = document.createElement('button');
     var delText = document.createTextNode('Delete')
     delBtn.setAttribute('onclick', "delDiv('" + note.title + "')");
-    mydiv.appendChild(delBtn);
+    newDiv.appendChild(delBtn);
     delBtn.appendChild(delText);
 
 
@@ -91,24 +93,20 @@ function toggleFav(title) { //byt namn till toggleFav
 
 }
 function favLoad () {
-
+  
   // load form localstorage
-  return[favs];
+
 
 }
-function favSave(favs) {
-  localStorage.setItem(favs, favourites);
+function favSave() {
   //save to localStorage
 }
 
+document.getElementById('showFavs').addEventListener('click', function () {
 
-/*   noteLoad();
-  if (notes.includes(content)) {
-    content = true
-  } else {
-    content = false
-  }
-   */
+  noteLoad((n) => (n.fav == true)); // show only items where fav is true
+})
+
 
 
 /* Notes är en tom array.
@@ -130,7 +128,7 @@ function noteLoad() {
     //console.log( localStorage.key( i ) + ": " + localStorage.getItem( localStorage.key( i ) ) );
     let title = localStorage.key( i );
     let contents = localStorage.getItem(title);
-    let favs = favLoad();
+    let favs = toggleFav();
      if (favs.includes(title)) { 
       fav = true
     } else {

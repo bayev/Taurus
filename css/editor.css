@@ -50,3 +50,8 @@ flex: 5;
 padding: 20px;
 flex:1;
 }
+
+#favs {
+    padding: 20px;
+    flex:1;
+} 

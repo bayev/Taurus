@@ -76,7 +76,8 @@ let favs = [];
 function toggleFav(title) { //byt namn till toggleFav
   console.log(title);
   if (favs.includes(title)) {
-    favs.splice(favs.indexOf(title));
+    let x = (favs.indexOf(title));
+    favs.splice(x, 1);
     console.log('removed');
 
   } else {

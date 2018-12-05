@@ -60,17 +60,6 @@ function updateView() {
     mydiv.appendChild(delBtn);
     delBtn.appendChild(delText);
 
-  /*     let aatag = document.createElement('a');
-      let pix = document.createElement('img');
-
-      pix.setAttribute("src", "http://www.google.co.in/images/nav_logo91.png");
-
-      aatag.appendChild(pix);
-
-      aatag.setAttribute("href", "www.google.se");
-
-      mydiv.appendChild(aatag); */
-
 
 
 
@@ -86,18 +75,28 @@ let favs = [];
 
 function toggleFav(title) { //byt namn till toggleFav
   console.log(title);
-  // if favs.includes(title) Betyder att den redan fanns.
-  favs.push(title);
+  if (favs.includes(title)) {
+    favs.splice(favs.indexOf(title));
+    console.log('removed');
 
-  console.log(favs);
+  } else {
+    favs.push(title);
+
+    console.log('added');
+  }
+  // if favs.includes(title) Betyder att den redan fanns.
+
+  return(favs);  
 
 }
 function favLoad () {
+
   // load form localstorage
-  return ["<p>2018-12-04 14:58:21</p><p>Test1</p>"];
+  return[favs];
 
 }
-function favSave (favs) {
+function favSave(favs) {
+  localStorage.setItem(favs, favourites);
   //save to localStorage
 }
 

@@ -65,8 +65,7 @@ function updateView() {
 
 
 
-  });
-}
+  });}
 
 function delDiv(title){
   localStorage.removeItem(title);
@@ -102,10 +101,23 @@ function favSave() {
   //save to localStorage
 }
 
-document.getElementById('showFavs').addEventListener('click', function () {
+function showFavs() {
+  let notes = noteLoad();
+  notes.forEach((note) => {
+  if (JSON.parse(note.fav) !== true) {
+    localStorage.removeItem(note.title);
+    updateView();
+  } else {
+    console.log('no FAVS');
+  }
 
-  noteLoad((n) => (n.fav == true)); // show only items where fav is true
-})
+
+});}
+
+
+
+  // show only items where fav is true
+
 
 
 

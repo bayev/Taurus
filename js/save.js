@@ -69,7 +69,7 @@ function updateView() {
 
 function delDiv(title){
   localStorage.removeItem(title);
-  updateView();
+  favView();
 }
 
 var favs = [];
@@ -100,7 +100,7 @@ function favLoad () {
   return(favs); 
 }
 function favSave(favs) {
-  localStorage.setItem('favs', JSON.stringify(favs))
+  localStorage.setItem('favs', JSON.stringify(favs));
   //save to localStorage
 }
 
@@ -161,3 +161,41 @@ function showNote(contents) {
 }
 
 
+/* TESSST */
+
+
+function favView() {
+  let notes = noteLoad();
+  while (notes.firstChild) {
+    notes.removeChild(notes.firstChild);
+  }
+  document.getElementById('notes').innerHTML = '<h3>My Notes</h3>';
+  
+  notes.forEach((note) => {
+    if (note.fav !== true) {
+      console.log('stopped false divs');
+    } else {
+    console.log(note);
+    var myDiv = document.getElementById("notes");
+    var newDiv = document.createElement("div");
+    var aTag = document.createElement('a');
+
+    aTag.setAttribute('onclick', "showNote('" + note.title + "')");
+    aTag.innerHTML = note.title;
+    
+    myDiv.appendChild(newDiv);
+    newDiv.appendChild(aTag);
+
+/*     var favButton = document.createElement('button');
+    var favText = document.createTextNode(note.fav ? 'Remove Favourite': 'Make Favourite')
+    favButton.setAttribute('onclick', "toggleFav('" + note.title + "')");
+    newDiv.appendChild(favButton);
+    favButton.appendChild(favText); */
+
+/*     var delBtn = document.createElement('button');
+    var delText = document.createTextNode('Delete')
+    delBtn.setAttribute('onclick', "delDiv('" + note.title + "')");
+    newDiv.appendChild(delBtn);
+    delBtn.appendChild(delText); */
+
+  }});}

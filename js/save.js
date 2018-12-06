@@ -90,7 +90,7 @@ function updateView() {
 
 function delDiv(title){
   localStorage.removeItem(title);
-  updateFav();
+  updateView();
 }
 
 var favs = [];

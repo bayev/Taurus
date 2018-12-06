@@ -14,7 +14,10 @@ height: 100vh;
 body * {
   visibility: hidden;
 }
+
+@page { margin: 0; }
 #editor * {
+  margin: 1% 1% 0 1%;
   visibility: visible;
 }
 #editor {
@@ -25,8 +28,48 @@ body * {
 }
 }
 
+/* Smal devices (mobilphone) */
+@media only screen and (min-width: 300px) {
+  /* the text in the editor */
+  .tina>section{
+    width: 10em;
+  }
+
+  .quill-wrap {
+    width: 20em;
+   }
+
+   .ql-editor {
+    margin: 0 1em 0 1em;
+    padding: 0;
+    line-height: 1em;
+   }
+
+ } 
+
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  /* the text in the editor */
+  .tina>section{
+    width: 10em;
+  }
+ 
+  .quill-wrap {
+    width: 20em;
+   }
+
+   .ql-editor {
+    margin: 0 1em 0 1em;
+    font-size: 1em;
+    padding: 0;
+    line-height: 1.7em;
+   }
+
+
+}
+
+@media only screen and (min-width: 1020px) {
+  /* the text in the editor */
   .tina>section{
     width: 10em;
   }
@@ -37,31 +80,31 @@ body * {
     width: 20em;
    }
 
-  
+   .ql-editor {
+    margin: 0 1em 0 1em;
+    font-size: 1em;
+    padding: 0;
+    line-height: 1.7em;
+   }
 
-  
 
+}
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) { 
-  .tina>section{
-    width: 40em;
-  }
+@media only screen and (min-width: 1900px) { 
+  /* the text in the editor */
+  .ql-editor {
+  margin: 0 1em 0 1em;
+  font-size: 3em;
+  line-height: 1.7em;
+}
 
-  /*.notes{
-    width: 20em;
-  }*/
+.tina>section{
+  width: 40em;
+}
 
-  .quill-wrap {
-    width: 20em;
+
+.quill-wrap {
+  width: 20em;
    }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-/*@media only screen and (min-width: 1200px) {
-  
-.flexcontainer2>section>article{
-      width: 35em;
-  }
-   .work {
-      grid-template-columns: repeat(2, 1fr);
-   }
-} */
+}

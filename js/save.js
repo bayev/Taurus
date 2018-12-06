@@ -39,6 +39,9 @@ function updateView() {
   let notes = noteLoad();
   document.getElementById('notes').innerHTML = '<h3>My Notes</h3>';
   notes.forEach((note) => {
+    if (note.title == [favs]) { 
+      console.log('stopped extra fav div'); 
+    }else {
     console.log(note);
     var myDiv = document.getElementById("notes");
     var newDiv = document.createElement("div");
@@ -62,7 +65,7 @@ function updateView() {
     newDiv.appendChild(delBtn);
     delBtn.appendChild(delText);
 
-  });}
+  }});}
 
 function delDiv(title){
   localStorage.removeItem(title);

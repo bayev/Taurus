@@ -5,6 +5,27 @@ window.onload = function() {
 /* EVENT Listeners */
 document.getElementById("submit").addEventListener("click", clickSave);
 
+document.getElementById("showFavs").addEventListener("click", klick);
+
+var clicks = 0;
+
+function klick() {
+
+  clicks += 1;
+
+  if (clicks % 2) {
+    updateFav();
+  }
+  else {
+    updateView();
+  };
+
+};
+
+
+
+
+
 /* Denna funktion är länkad till Save knappen.
 Det enda den gör är att spara titlen som är vad användaren skriver som title sedan sparar den även funktionen noteStored() som sin value. Den funktionen returnerar endast vad som står i editorn. 
 Reloaden triggar igång funktionen update view som är inställt på onload.
@@ -69,7 +90,7 @@ function updateView() {
 
 function delDiv(title){
   localStorage.removeItem(title);
-  favView();
+  updateFav();
 }
 
 var favs = [];
@@ -164,15 +185,17 @@ function showNote(contents) {
 /* TESSST */
 
 
-function favView() {
+function updateFav() {
   let notes = noteLoad();
   while (notes.firstChild) {
     notes.removeChild(notes.firstChild);
   }
   document.getElementById('notes').innerHTML = '<h3>My Notes</h3>';
-  
+
+
+
   notes.forEach((note) => {
-    if (note.fav !== true) {
+    if (note.fav == false) {
       console.log('stopped false divs');
     } else {
     console.log(note);

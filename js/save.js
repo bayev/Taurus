@@ -39,7 +39,7 @@ function updateView() {
   let notes = noteLoad();
   document.getElementById('notes').innerHTML = '<h3>My Notes</h3>';
   notes.forEach((note) => {
-    if (note.title == [favs]) { 
+    if (note.title == ['favs']) { 
       console.log('stopped extra fav div'); 
     }else {
     console.log(note);
@@ -94,6 +94,7 @@ function toggleFav(title) { //byt namn till toggleFav
 
 function favLoad () {
   let favs = localStorage.getItem('favs') ? JSON.parse(localStorage.getItem('favs')) : [];
+  console.log(favs);
   // load form localstorage
 
   return(favs); 
@@ -158,3 +159,5 @@ function noteLoad() {
 function showNote(contents) {
   editor.root.innerHTML = localStorage.getItem(contents);
 }
+
+

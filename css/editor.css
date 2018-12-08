@@ -55,3 +55,29 @@ flex:1;
     padding: 20px;
     flex:1;
 } 
+
+
+
+.font1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.font2 {
+    font-family: 'Gamja Flower', cursive;
+    font-size: 30px;
+}
+
+.font3 {
+    font-family: 'Sacramento', cursive;
+    font-size: 30px;
+
+}
+
+.fontNormal {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+.ql-tooltip.ql-hidden {
+    visibility: hidden;
+}

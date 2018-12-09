@@ -21,7 +21,7 @@ function klick() {
   }
   else {
     updateView();
-    star.style.color = "rgb(175, 175, 175)";
+    star.style.color = "black";
   };
 
 };

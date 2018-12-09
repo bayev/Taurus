@@ -26,8 +26,15 @@ margin-top:20px;
     flex: 0.5;
 }
 
+#toolbar i {
+    cursor: pointer;
+    color: black;
+}
+
 #editor {
     flex: 9;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #moveBtn {

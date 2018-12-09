@@ -7,6 +7,9 @@ html, body {
 height: 100vh;
 }
 
+a {
+  cursor: pointer;
+}
 
 .tina {
   display: flex;

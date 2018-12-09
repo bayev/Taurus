@@ -7,20 +7,25 @@ document.getElementById("submit").addEventListener("click", clickSave);
 
 document.getElementById("showFavs").addEventListener("click", klick);
 
+
+
 var clicks = 0;
 
 function klick() {
-
+  let star = document.getElementsByTagName("i")[2];
   clicks += 1;
 
   if (clicks % 2) {
     updateFav();
+    star.style.color = "gold";
   }
   else {
     updateView();
+    star.style.color = "rgb(175, 175, 175)";
   };
 
 };
+
 
 
 

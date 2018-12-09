@@ -40,3 +40,9 @@ margin-top: auto;
 padding: 10px 0;
 }
 
+.fa-star {
+    color: rgb(175, 175, 175);
+    cursor: pointer;
+}
+
+

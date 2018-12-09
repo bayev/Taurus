@@ -25,16 +25,29 @@ a {
 
 @page { margin: 0; }
 
-body * {
+body {
   visibility: hidden;
 }
-#editor * {
+#editor {
   visibility: visible;
+  overflow-y: hidden;
 }
+
+#editor::-webkit-scrollbar { 
+  -ms-overflow-style: none;
+  width: 0 !important;
+
+}
+
 #editor {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
 }
+
+.ql-tooltip.ql-hidden {
+  visibility: hidden;
+}
+
 }

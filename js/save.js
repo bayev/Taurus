@@ -35,6 +35,7 @@ function klick() {
 
 /* These 4 functions is  connected to the save button in toolbar. It calls a custom built Alert box in which the user need to typ in a value. 
 That value will become the key in localstorage. And the content will be everthing stored in the editor */
+
 function clickSave() {
   var title = "<p>" + time() + "</p><p>" + alert() + "</p>";
   if (title == "user") {
@@ -63,7 +64,6 @@ function time() {
 /* Updateview. Sorts through all of the keys in LS and appends a div for them in the section "notes". It also adds buttons, a tags and images. */
 
 function updateView() {
-  console.log(clicks);
   if (clicks % 2) {
     document.getElementsByTagName("i")[2].style.color = "black";
     clicks += 1;
@@ -75,7 +75,6 @@ function updateView() {
       return;
     } else {
       clicks = 0;
-      console.log(note);
       var myDiv = document.getElementById("notes");
       var newDiv = document.createElement("div");
       var aTag = document.createElement('a');
@@ -114,16 +113,11 @@ function delDiv(title) {
 var favs = [];
 
 function toggleFav(title) { 
-  console.log(title);
   if (favs.includes(title)) {
     let x = (favs.indexOf(title));
     favs.splice(x, 1);
-    console.log('removed');
-
   } else {
     favs.push(title);
-
-    console.log('added');
   }
   favSave(favs);
   updateView();
@@ -139,24 +133,13 @@ function favSave(favs) {
   localStorage.setItem('favs', JSON.stringify(favs));
 }
 
-function showFavs() {
-  console.log(clicks);
-  let notes = noteLoad();
-  notes.forEach((note) => {
-    if (JSON.parse(note.fav) !== true) {
-
-    } else {
-      console.log('no FAVS');
-    }
-  });
-}
-
 function newNote() {
   editor.root.innerHTML = "";
   editor.root.focus();
 }
 
 /* Here is where the magic happens. Note Load pushes the key and content in to a empty array and also adds if the nots has a true or false status*/
+
 function noteLoad() {
   var notes = [];
   let favs = favLoad();
@@ -199,7 +182,6 @@ function updateFav() {
     if (note.fav == false) {
       return;
     } else {
-      console.log(note);
       var myDiv = document.getElementById("notes");
       var newDiv = document.createElement("div");
       var aTag = document.createElement('a');

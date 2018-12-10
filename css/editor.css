@@ -2,13 +2,13 @@
 
 .quill-wrap {
 display: flex;
-flex: 11;
+flex: 8;
 flex-direction: column;
 height: 100vh;
 }
 
 .quill-wrap .ql-active {
-border: 1px solid #ccc;
+border: 1px solid #ccc  ;
 border-radius:4px;
 margin: 0, 1em, 0, 1em;
 }
@@ -58,11 +58,6 @@ flex: 5;
 padding: 20px;
 flex:1;
 }
-
-#showFavs {
-    padding: 20px;
-    flex:1;
-} 
 
 
 

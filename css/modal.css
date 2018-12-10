@@ -1,5 +1,3 @@
-
-
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -35,9 +33,7 @@
   text-align: center;
   padding:5%;
   margin:0 0 0 1%;
-
   color:black;
-
   min-width: 100px;
   min-height: 50px;
 
@@ -73,7 +69,8 @@ font-family: 'Questrial', sans-serif;
 .xMark {
   padding-right: 20px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
+  margin:auto;
 }
 .close {
     font-size: 40px;
@@ -97,7 +94,7 @@ font-family: 'Questrial', sans-serif;
 
 .slide-wrapper {
   width: 2912px;
-  -webkit-animation: slide 18s ease infinite;
+  animation: slide 18s ease infinite;
 }
 
 .slide {
@@ -128,7 +125,7 @@ font-family: 'Questrial', sans-serif;
   font-size: 10em;
 }
 
-@-webkit-keyframes slide {
+@keyframes slide {
   20% {margin-left: 0px;}
   30% {margin-left: -728px;}
   50% {margin-left: -728px;}

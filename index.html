@@ -1,82 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <title>Taurus</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Website for making notes">
+  <title>Taurus Notepad</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/modal.css">
-  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="icon" href="img/logo.ico">  
+    <!-- Include stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/quill.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/notes.css">
+    <link rel="stylesheet" href="css/editor.css">
 
-  <!-- FAVICON  -->
+    <link rel="stylesheet" href="css/prompt.css">
+
 
 </head>
 <body>
-  <div class="wrapper">
-  <noscript> Your browser doesn't have JavaScript on pls activate! </noscript>
-
-
-  <div id="form" class="modal">
-    <div class="xMark">
-      <span onclick="document.getElementById('form').style.display='none', checkdivs(1)" class="close" title="Close Modal">&times;</span>
-    </div>
-    <form class="modal-content">
-      <div class="container">
-          <h2 class="firstH">Welcome to Quire</h2> <br />
-          <div class="information">
-  
-            <p class="firstInfo">
-              A free online text notepad.
-              What can you do?
-              Create different notepages and scribble down your notes.
-              Save them and it will be stored in Quire. Come back anytime you would like and edit, delete, structure your content.
-              All notes are dated automatically from when you edit in them. You have an really easy overview of when you created something.
-              Mark you note with a star to bookmark it. So you can more easily navigate to your marked page.
-            </p>
-  
-  
-  
-        </div>
-                <div id="slideshow">
-            <div class="slide-wrapper">
-              <div class="slide"><img src="https://weblearn.ox.ac.uk/library/image/help/en/What-is-the-Rich-Text-Editor-/Rich-Text-Editor-Toolbar.png" alt="text editor"></div>
-              <div class="slide"><img src="https://developer.atlassian.com/server/jira/platform/images/mnstr378-tut1.jpg" alt="saved document"></div>
-              <div class="slide"><img src="https://www.jqueryscript.net/images/Rich-Text-Editor-jQuery-RichText.jpg" alt="closed up picture text editor"></div>
-                <div class="slide"><img src="
-                  https://d2.alternativeto.net/dist/s/froala_334261_full.jpg?format=jpg&width=1600&height=1600&mode=min&upscale=false" alt="Function"></div>
-  
-            </div>
-          </div>
-      </div>
-    </form>
-  </div>
-</div>
 
   <div class="tina">
     <nav>
-        <figure class="logo">
-          <img src="./img/logo.png" alt="Logo">
-        </figure>
-        <ul class="navi">
-            <li><a><i class="far fa-sticky-note"></i></a></li>
-            <li><a><i class="fas fa-search"></i></a></li>
-            <li><a><i class="far fa-star"></i></a></li>
-            <li><a><i class="fas fa-cogs"></i></a></li>
-        </ul>
-        <div class="infoicon">
-          <a><i class="fas fa-info-circle"></i></a>
-        </div>
+      <figure class="logo">
+        <img src="img/logo.png" alt="Logo">
+      </figure>
+      <ul class="navi">
+          <li><a class="newnotebutton"><i class="far fa-sticky-note"></i></a></li>
+          <li><a class="searchbutton"><i class="fas fa-search"></i></a></li>
+          <li><a class="favoritebutton"><i class="far fa-star"></i></a></li>
+      </ul>
+      <div class="infoicon">
+        <a><i class="fas fa-info-circle"></i></a>
+      </div>
     </nav>
 
-    <section class="notes">
-      <h3>Need stuff</h3>
+    <section class="notes" id ="notes">
+      <h3>My Notes</h3>
+    
     </section>
+  
+    <!-- Create the editor container -->
+    <div class="quill-wrap">
+        <div id="toolbar">
+            <span class="ql-formats">
+              <select class="ql-header">
+                <option value="1">Heading</option>
+                <option value="2">Subheading</option>
+                <option selected>Normal</option>
+              </select>
+              <select class="ql-font">
+                <option selected>Sans Serif</option>
+                <option value="serif">Serif</option>
+                <option value="monospace">Monospace</option>
+              </select>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-bold"></button>
+              <button class="ql-italic"></button>
+              <button class="ql-underline"></button>
+              <button class="ql-strike"></button>
+            </span>
+            <span class="ql-formats">
+              <select class="ql-color"></select>
+              <select class="ql-background"></select>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-list" value="ordered"></button>
+              <button class="ql-list" value="bullet"></button>
+              <select class="ql-align">
+                <option selected></option>
+                <option value="center"></option>
+                <option value="right"></option>
+                <option value="justify"></option>
+              </select>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-blockquote"></button>
+              <button class="ql-link"></button>
+              <button class="ql-image"></button>
+              <button class="ql-code-block"></button>
+              <button class="ql-video"></button>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-clean"></button>
+            </span>
+        </div>
+      
+      <!-- Create the editor container -->
+      <div id="editor">
+          <p class="ql-align-center">
+          <p class="ql-editor" data-gramm="false" contenteditable="true"><p><strong>
+          <!-- <em>Hej och välkommen till <u>Quire notepad!</u></em></strong></p><p><br></p>
+          <p>Det finnas massor av bra funktioner här. Alla finns i beskrivningen som du fick i pop up rutan             som dök upp första gången du besökte sidan. Hann du inte se allt?</p>
+          <p>Klicka då på informations bilden längst ner till vänster.</p>
+          <p>Spara ner alla dina anteckningar genom att trycka på Save knappen.</p> -->
+      </div>
+     
+      <div id="moveBtn"> 
+      <button id="submit"> Save </button> 
+      <button id="load" onclick="localStorage.clear(); location.reload();"> CLEAR LS </button>
+      <button id="load" onclick="window.print();"> Print </button></div>
+      
+    </div>
   </div>
 
+
+
+
+  <!-- Include the Quill library -->
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+  
+
+
+  <!-- Initialize Quill editor -->
+  <script>
+  var editor = new Quill('#editor', {
+    modules: { toolbar: '#toolbar' },
+    theme: 'snow'
+  });
+  
+  
+  </script>
+
+
+
+
+<div id="form" class="modal">
+  <div class="xMark">
+    <span onclick="document.getElementById('form').style.display='none', checkdivs(1)" class="close" title="Close Modal">&times;</span>
+  </div>
+  <form class="modal-content">
+    <div class="container">
+        <h2 class="firstH">Welcome to Quire</h2> <br />
+        <div class="information">
+
+          <p class="firstInfo">
+            A free online text notepad.
+            What can you do?
+            Create different notepages and scribble down your notes.
+            Save them and it will be stored in Quire. Come back anytime you would like and edit, delete, structure your content.
+            All notes are dated automatically from when you edit in them. You have an really easy overview of when you created something.
+            Mark you note with a star to bookmark it. So you can more easily navigate to your marked page.
+          </p>
+
+
+
+      </div>
+            <div id="slideshow">
+            <div class="slide-wrapper">
+            <div class="slide"><img src="https://weblearn.ox.ac.uk/library/image/help/en/What-is-the-Rich-Text-Editor-/Rich-Text-Editor-Toolbar.png" alt="text editor"></div>
+            <div class="slide"><img src="https://developer.atlassian.com/server/jira/platform/images/mnstr378-tut1.jpg" alt="saved document"></div>
+            <div class="slide"><img src="https://www.jqueryscript.net/images/Rich-Text-Editor-jQuery-RichText.jpg" alt="closed up picture text editor"></div>
+            <div class="slide"><img src="https://d2.alternativeto.net/dist/s/froala_334261_full.jpg?format=jpg&width=1600&height=1600&mode=min&upscale=false" alt="Function"></div>
+          </div>
+        </div>
+    </div>
+  </form>
   <script src="js/modal.js"></script>
+  <script src="js/save.js"></script>
+  <script src="js/prompt.js"></script>
+
+
 </body>
 </html>
+

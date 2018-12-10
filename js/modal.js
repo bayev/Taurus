@@ -4,19 +4,19 @@ var test = document.getElementsByClassName('test')[0];
 var user = {name: 'key'};
 
 window.onclick = function(event) {
-  if (event.target == modal) {
+  if (event.target == modal){
     modal.style.display = 'none';
    }
 }
 
 window.onload = function(event) {
     checkData();
-
 }
     // var modalContent0 = document.getElementsByClassName("")[0];
 
 function checkdivs (x)
 {
+  // modal.style.display= (x == 1) ? "none" : "block";
   modal.style.display="block";
 
   if(x==1) {
@@ -57,4 +57,3 @@ if (localStorage.getItem(key) === null) {
   }
 }
 var checkUser = () => JSON.parse(localStorage.getItem('user'));
-

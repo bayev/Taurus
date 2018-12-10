@@ -1,0 +1,39 @@
+#alertBox {
+  position: absolute;
+  top: 30%;
+  bottom: 60%;
+  left: 40%;
+  max-width: 20%;
+  height: 20%;
+  background-color: rgb(253, 249, 243);;
+  border-radius: 5px;
+  z-index: 2;
+  padding: 2em 1em;
+  text-align: center;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#alertClose {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, .5);
+  width: 100%;
+  height: 100%;
+}
+
+#inputAlert {
+padding: 5px;
+margin: 15px 0;
+width: 80%;
+}
+
+@media only screen and (max-width: 556px) {
+  #alertBox {
+      font-size: 90%;
+      padding-bottom: 2em;
+      padding-top: 1em;
+  }
+
+}

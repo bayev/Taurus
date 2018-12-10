@@ -16,7 +16,7 @@ font-family: 'Open Sans', sans-serif;
 margin-bottom: 20%;
 font-weight: 400;
 font-family: 'Open Sans', sans-serif;
-font-size: 30px;
+font-size: 25px;
 }
 
 .notes div {
@@ -38,6 +38,11 @@ background: rgb(253, 249, 243);
 .notes a:active {
 color: white;
 }
+
+.notes img {
+  cursor: pointer;
+}
+
 
 .notes p:nth-child(1) {
 color: black;

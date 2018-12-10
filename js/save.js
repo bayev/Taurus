@@ -1,16 +1,16 @@
+/* ONLOAD */
 window.onload = function () {
   updateView();
-
 }
 
 /* EVENT Listeners */
 document.getElementById("submit").addEventListener("click", clickSave);
-
 document.getElementById("showFavs").addEventListener("click", klick);
 document.getElementById("newNote").addEventListener("click", newNote);
 
 
 
+/* When you click on the star in the nav. Its changes color and calls functions updateFav and updateView */
 
 var clicks = 0;
 
@@ -33,10 +33,8 @@ function klick() {
 
 
 
-/* Denna funktion är länkad till Save knappen.
-Det enda den gör är att spara titlen som är vad användaren skriver som title sedan sparar den även funktionen noteStored() som sin value. Den funktionen returnerar endast vad som står i editorn. 
-Reloaden triggar igång funktionen update view som är inställt på onload.
-Det är där vi skapar nya divar, a taggar etc. Kolla in den funktionen */
+/* These 4 functions is  connected to the save button in toolbar. It calls a custom built Alert box in which the user need to typ in a value. 
+That value will become the key in localstorage. And the content will be everthing stored in the editor */
 function clickSave() {
   var title = "<p>" + time() + "</p><p>" + alert() + "</p>";
   if (title == "user") {
@@ -47,12 +45,10 @@ function clickSave() {
 
 function receiveSave(title) {
   localStorage.setItem("<p>" + time() + "</p><p>" + title + "</p>", noteStored());
-  updateView(); /*Viktigt för funktionen updateView*/
+  updateView(); 
 
 }
 
-
-/* Det enda den här funktionen gör är att returnera vad det finns för innehåll i editorn. Detta är viktigt för clickSave funktionen eftersom där kör vi en setItem av innehållet. */
 
 function noteStored() {
   return (editor.root.innerHTML);
@@ -64,10 +60,7 @@ function time() {
   return (ts.toLocaleString());
 }
 
-/* Efter att clickSave funktionen är klar så laddas sidan om och updateView aktiveras. 
-Det första den gör är att kalla på funktionen noteLoad. NoteLoad är där vi tagit alla notes och pushat in det i en tomma arrayer.
-Notes blir då noteLoad(). För varje note så gör vi en div, a tag i våran section Notes.
-Attributet för a taggen på onclick blir funktionen showNote som hämtar innehållet för den title. */
+/* Updateview. Sorts through all of the keys in LS and appends a div for them in the section "notes". It also adds buttons, a tags and images. */
 
 function updateView() {
   console.log(clicks);
@@ -107,17 +100,11 @@ function updateView() {
       delImg.style.marginLeft = "8%";
       delImg.setAttribute('onclick', "delDiv('" + note.title + "')");
       newDiv.appendChild(delImg);
-
-
-      /*       var delBtn = document.createElement('button');
-            var delText = document.createTextNode('Delete')
-            delBtn.setAttribute('onclick', "delDiv('" + note.title + "')");
-            newDiv.appendChild(delBtn);
-            delBtn.appendChild(delText); */
-
     }
   });
 }
+
+/* delDiv and Togglefav does what it sounds like. Its connected to the star and trash van images on each div in section "notes". Togglefav makes it a favourite note but pushing the key into an empty array called favs and delDiv deletes it specific key from LS.*/
 
 function delDiv(title) {
   localStorage.removeItem(title);
@@ -126,7 +113,7 @@ function delDiv(title) {
 
 var favs = [];
 
-function toggleFav(title) { //byt namn till toggleFav
+function toggleFav(title) { 
   console.log(title);
   if (favs.includes(title)) {
     let x = (favs.indexOf(title));
@@ -138,23 +125,18 @@ function toggleFav(title) { //byt namn till toggleFav
 
     console.log('added');
   }
-  // if favs.includes(title) Betyder att den redan fanns.
   favSave(favs);
   updateView();
-
 }
 
+/*Loads favourite from LS if there is one*/
 function favLoad() {
   let favs = localStorage.getItem('favs') ? JSON.parse(localStorage.getItem('favs')) : [];
-  console.log(favs);
-  // load form localstorage
-
   return (favs);
 }
 
 function favSave(favs) {
   localStorage.setItem('favs', JSON.stringify(favs));
-  //save to localStorage
 }
 
 function showFavs() {
@@ -174,34 +156,13 @@ function newNote() {
   editor.root.focus();
 }
 
-
-
-// show only items where fav is true
-
-
-
-
-/* Notes är en tom array.
-Vi gör en let = title för varje key som vi redan fått sparat av användaren där vi promptade hen om det. 
-Let = contents så tog vi getItem av den keyn. 
-Sedan pushar vi det i två tomma arrayer. Som title är keyn och contents är innehållet.
-Den kör om detta tills den pushat in alla och sedan returnerar den notes som sedan updateView sorterar ut i divs och a taggar. */
-
-/* [{ title: "ett",
-      contents: "Hello world x 100"},
-    { title: "två",
-      contents: "Hello world x 100"}]
-      */
-
+/* Here is where the magic happens. Note Load pushes the key and content in to a empty array and also adds if the nots has a true or false status*/
 function noteLoad() {
   var notes = [];
   let favs = favLoad();
-  /*   var favs = loadFavs(); // ['title1'..] */
   for (var i = 0, len = localStorage.length; i < len; ++i) {
-    //console.log( localStorage.key( i ) + ": " + localStorage.getItem( localStorage.key( i ) ) );
     let title = localStorage.key(i);
     let contents = localStorage.getItem(title);
-    //console.log(favs.includes(title));
     if (favs.includes(title)) {
       fav = true
     } else {
@@ -212,22 +173,19 @@ function noteLoad() {
         title: title,
         contents: contents,
         fav: fav
-      }); /* , fav: fav */
+      }); 
     }
   }
   return (notes);
 }
 
-/* Show note funktionen hämtar innehållet från det där id:et. Jag förstår inte hur? Vad kallar argumentet på? Hur fattar den att argumentet är key? */
+/* Show note function just shows the content from the specific key */
 
 function showNote(contents) {
   editor.root.innerHTML = localStorage.getItem(contents);
 }
 
-
-/* TESSST */
-
-
+/* Update Fav is just like UpdateView exakt it targets if the note has been Fav marked and discards all that has a Fav= false status*/
 function updateFav() {
   let notes = noteLoad();
   while (notes.firstChild) {
@@ -251,19 +209,6 @@ function updateFav() {
 
       myDiv.appendChild(newDiv);
       newDiv.appendChild(aTag);
-
-      /*     var favButton = document.createElement('button');
-          var favText = document.createTextNode(note.fav ? 'Remove Favourite': 'Make Favourite')
-          favButton.setAttribute('onclick', "toggleFav('" + note.title + "')");
-          newDiv.appendChild(favButton);
-          favButton.appendChild(favText); */
-
-      /*     var delBtn = document.createElement('button');
-          var delText = document.createTextNode('Delete')
-          delBtn.setAttribute('onclick', "delDiv('" + note.title + "')");
-          newDiv.appendChild(delBtn);
-          delBtn.appendChild(delText); */
-
     }
   });
 }

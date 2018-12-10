@@ -49,6 +49,7 @@ function clickSave() {
 
 function noteStored() {
   return(editor.root.innerHTML);
+  
 }
 
 function time () {

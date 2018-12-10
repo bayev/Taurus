@@ -28,7 +28,8 @@ a {
 body {
   visibility: hidden;
 }
-#editor {
+#editor * {
+  margin: 1% 1% 0 1%;
   visibility: visible;
   overflow-y: hidden;
 }
@@ -49,5 +50,52 @@ body {
 .ql-tooltip.ql-hidden {
   visibility: hidden;
 }
+}
 
+/* Smal devices (mobilphone) */
+@media only screen and (min-width: 300px) {
+  /* the text in the editor */
+  .tina>section{
+    width: 10em;
+  }
+   .quill-wrap {
+    width: 20em;
+   }
+    .ql-editor {
+    margin: 0 1em 0 1em;
+    padding: 0;
+    line-height: 1em;
+   }
+  } 
+ /* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  /* the text in the editor */
+  .tina>section{
+    width: 10em;
+  }
+  /*.notes{
+  width: 20em;
+}*/
+ 
+  .quill-wrap {
+    width: 20em;
+   }
+   
+   .ql-editor {
+    margin: 0 1em 0 1em;
+    font-size: 1em;
+    padding: 0;
+    line-height: 1.7em;
+   }
+  }
+   
+ /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) { 
+}
+ @media only screen and (min-width: 1020px) {
+  /* the text in the editor */
+  .tina>section{
+    width: 40em;
+    width: 10em;
+  }
 }

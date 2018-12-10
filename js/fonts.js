@@ -22,21 +22,29 @@ document.getElementById("fn").addEventListener('click', function(){
 
 
 function font1() {
-    document.getElementById('editor').setAttribute("class", "font1");
+    document.getElementsByClassName('ql-editor')[0].classList.remove("font2");
+    document.getElementsByClassName('ql-editor')[0].classList.remove("font3");
+    document.getElementsByClassName('ql-editor')[0].classList.add("font1");
 };
 
 
 function font2() {
-    document.getElementById('editor').setAttribute("class", "font2");
+    document.getElementsByClassName('ql-editor')[0].classList.remove("font1");
+    document.getElementsByClassName('ql-editor')[0].classList.remove("font3");
+    document.getElementsByClassName('ql-editor')[0].classList.add("font2");
 };
 
 
 function font3() {
-    document.getElementById('editor').setAttribute("class", "font3");
+    document.getElementsByClassName('ql-editor')[0].classList.remove("font1");
+    document.getElementsByClassName('ql-editor')[0].classList.remove("font2");
+    document.getElementsByClassName('ql-editor')[0].classList.add("font3");
 };
 
 function fontNormal() {
-    document.getElementById('editor').setAttribute("class", "fontNormal");
+    document.getElementsByClassName('ql-editor')[0].classList.remove("font1");
+    document.getElementsByClassName('ql-editor')[0].classList.remove("font2");
+    document.getElementsByClassName('ql-editor')[0].classList.remove("font3");
 };
 
 

@@ -2,14 +2,15 @@
 
 .quill-wrap {
 display: flex;
-flex: 10;
+flex: 11;
 flex-direction: column;
 height: 100vh;
 }
 
 .quill-wrap .ql-active {
-border: 1px solid #ccc !important;
+border: 1px solid #ccc;
 border-radius:4px;
+margin: 0, 1em, 0, 1em;
 }
 .quill-wrap button, .quill-wrap .ql-picker {
 margin-right:2px
@@ -67,17 +68,19 @@ flex:1;
 
 .font1 {
     font-family: 'Montserrat', sans-serif;
+    line-height: 2em; 
 }
 
 .font2 {
-    font-family: 'Gamja Flower', cursive;
-    font-size: 30px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 20px;
 }
 
 .font3 {
     font-family: 'Sacramento', cursive;
-    font-size: 30px;
-
+    font-size: 25px;
+    line-height: 2em;
+    color: rgb(127, 127, 241);
 }
 
 .fontNormal {

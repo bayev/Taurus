@@ -1,22 +1,19 @@
-
-
-
-document.getElementById("f1").addEventListener('click', function() {
+document.getElementById("f1").addEventListener('click', function () {
     font1();
 });
 
-document.getElementById("f2").addEventListener('click', function()  {
+document.getElementById("f2").addEventListener('click', function () {
     font2();
 
 });
 
-document.getElementById("f3").addEventListener('click', function()  {
+document.getElementById("f3").addEventListener('click', function () {
     font3();
 });
 
 
-document.getElementById("fn").addEventListener('click', function(){
- fontNormal();
+document.getElementById("fn").addEventListener('click', function () {
+    fontNormal();
 });
 
 
@@ -46,5 +43,3 @@ function fontNormal() {
     document.getElementsByClassName('ql-editor')[0].classList.remove("font2");
     document.getElementsByClassName('ql-editor')[0].classList.remove("font3");
 };
-
-

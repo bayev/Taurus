@@ -1,10 +1,11 @@
-
 * {
   padding: 0;
   margin: 0;
 }
-html, body {
-height: 100vh;
+
+html,
+body {
+  height: 100vh;
 }
 
 a {
@@ -14,87 +15,98 @@ a {
 .tina {
   display: flex;
   height: 100%;
-  }
+}
 
-  .favourite {
-    color: red;
-  }
+.favourite {
+  color: red;
+}
+
 /*PRINT CSS*/
 
 @media print {
 
-@page { margin: 0; }
+  @page {
+    margin: 0;
+  }
 
-body {
-  visibility: hidden;
-}
-#editor * {
-  margin: 1% 1% 0 1%;
-  visibility: visible;
-  overflow-y: hidden;
-}
+  body {
+    visibility: hidden;
+  }
 
-#editor::-webkit-scrollbar { 
-  -ms-overflow-style: none;
-  width: 0 !important;
+  #editor * {
+    margin: 1% 1% 0 1%;
+    visibility: visible;
+    overflow-y: hidden;
+  }
 
-}
+  #editor::-webkit-scrollbar {
+    -ms-overflow-style: none;
+    width: 0 !important;
 
-#editor {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-}
+  }
 
-.ql-tooltip.ql-hidden {
-  visibility: hidden;
-}
+  #editor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .ql-tooltip.ql-hidden {
+    visibility: hidden;
+  }
 }
 
 /* Smal devices (mobilphone) */
 @media only screen and (min-width: 300px) {
+
   /* the text in the editor */
-  .tina>section{
+  .tina>section {
     width: 10em;
   }
-   .quill-wrap {
+
+  .quill-wrap {
     width: 20em;
-   }
-    .ql-editor {
+  }
+
+  .ql-editor {
     margin: 0 1em 0 1em;
     padding: 0;
     line-height: 1em;
-   }
-  } 
- /* Medium devices (landscape tablets, 768px and up) */
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+
   /* the text in the editor */
-  .tina>section{
+  .tina>section {
     width: 10em;
   }
+
   /*.notes{
   width: 20em;
 }*/
- 
+
   .quill-wrap {
     width: 20em;
-   }
-   
-   .ql-editor {
+  }
+
+  .ql-editor {
     margin: 0 1em 0 1em;
     font-size: 1em;
     padding: 0;
     line-height: 1.7em;
-   }
   }
-   
- /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) { 
 }
- @media only screen and (min-width: 1020px) {
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1020px) {
+
   /* the text in the editor */
-  .tina>section{
+  .tina>section {
     width: 40em;
     width: 10em;
   }

@@ -46,7 +46,7 @@ function clickSave() {
 
 function receiveSave(title) {
   localStorage.setItem("<p>" + time() + "</p><p>" + title + "</p>", noteStored());
-  updateView(); 
+  updateView();
 
 }
 
@@ -112,7 +112,7 @@ function delDiv(title) {
 
 var favs = [];
 
-function toggleFav(title) { 
+function toggleFav(title) {
   if (favs.includes(title)) {
     let x = (favs.indexOf(title));
     favs.splice(x, 1);
@@ -156,7 +156,7 @@ function noteLoad() {
         title: title,
         contents: contents,
         fav: fav
-      }); 
+      });
     }
   }
   return (notes);

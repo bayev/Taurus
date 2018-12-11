@@ -1,5 +1,5 @@
 
-**Quire Notepad.**
+# **Quire Notepad.**
 This is an editable notepad that a collective of students at KYH Nacka Sweden created for a team project.<br>
 We had an assignment to create a functional notepad that could store unique notes in the local storage. So let's talk about this notepads functions.
 

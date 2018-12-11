@@ -1,5 +1,5 @@
 
-# Quire Notepad.
+**Quire Notepad.**
 This is an editable notepad that a collective of students at KYH Nacka Sweden created for a team project.<br>
 We had an assignment to create a functional notepad that could store unique notes in the local storage. So let's talk about this notepads functions.
 
@@ -25,8 +25,8 @@ Clicking on the bigger star in our nav section will bring forward all of your fa
 Also our teachers that helped us navigate trough the jungle of code.
 
 ### Authors.
-Tina Olsson<br>
-Sara Överström<br>
-Edward Kumerius<br>
-Patrick Sjöberg<br>
-Azamat Azhibayev
+Tina Olsson <a href="https://github.com/tinaolsson">@tinaolsson</a> <br>
+Sara Överström <a href="https://github.com/oversteem">@oversteem</a><br>
+Edward Kumerius <a href="https://github.com/Eddyking1">@Eddyking1</a> <br>
+Patrick Sjöberg <a href="https://github.com/paz198787">@paz198787</a> <br>
+Azamat Azhibayev <a href="https://github.com/bayev">@bayev</a> 

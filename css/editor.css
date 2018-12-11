@@ -71,14 +71,14 @@
 
 .font2 {
     font-family: 'Dosis', sans-serif;
-    font-size: 20px;
+    font-size: 1.5em;
 }
 
 .font3 {
     font-family: 'Sacramento', cursive;
-    font-size: 25px;
+    font-size: 2em;
     line-height: 2em;
-    color: rgb(127, 127, 241);
+    color: rgb(0, 102, 204);
 }
 
 .fontNormal {

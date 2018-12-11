@@ -26,7 +26,7 @@
   background: rgba(239, 197, 142, 0.18);
   border: 2px solid rgb(253, 249, 243);
   text-align: center;
-  overflow: auto;
+  overflow-x: scroll;
   padding: 8px;
   text-transform: capitalize;
 }
@@ -36,9 +36,6 @@
   background: rgb(253, 249, 243);
 }
 
-.notes a:active {
-  color: white;
-}
 
 .notes img {
   cursor: pointer;
@@ -56,6 +53,11 @@
   font-weight: 300;
   font-size: 22px;
   text-decoration: none;
+
+}
+
+.notes p:nth-child(2):active {
+  color: white;
 }
 
 /*SCROLLBAR*/

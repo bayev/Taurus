@@ -15,7 +15,7 @@ document.getElementById("newNote").addEventListener("click", newNote);
 var clicks = 0;
 
 function klick() {
-  let star = document.getElementsByTagName("i")[2];
+  let star = document.getElementsByTagName("i")[3];
   clicks += 1;
 
   if (clicks % 2) {

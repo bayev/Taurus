@@ -1,3 +1,4 @@
+
 function closeAlertBox() {
   alertBox = document.getElementById("alertBox");
   alertClose = document.getElementById("alertClose");

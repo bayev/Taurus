@@ -1,8 +1,10 @@
+
+
 .notes {
   background-color: rgba(239, 197, 142, 0.18);
   border-left: 1px solid black;
   border-right: 1px solid black;
-  flex: 1.3;
+  flex: 0 ;
   flex-direction: column;
   overflow-y: scroll;
   display: flex;
@@ -10,6 +12,15 @@
   min-height: 100%;
   align-items: center;
   font-family: 'Open Sans', sans-serif;
+  -webkit-transition: flex .5s ease;
+  transition: flex .5s ease;
+  position: relative;
+}
+
+.moved {
+  flex: 1.3;
+  -webkit-transition: flex .5s ease;
+  transition: flex .5s ease;
 }
 
 .notes h3 {

@@ -19,8 +19,12 @@ Clicking on the bigger star in our nav section will bring forward all of your fa
 
 ![Alt text](/img/quirepage.png "Our Quire Notepad")
 
+### Attribution.
+<a href="http://www.fontawesome.com">Font Awesome</a> For the icons that we have used.<br>
+<a href="https://quilljs.com/">Quill</a> For the editor that we have used.<br>
+Also our teachers that helped us navigate trough the jungle of code.
 
-### Contributors.
+### Authors.
 Tina Olsson<br>
 Sara Överström<br>
 Edward Kumerius<br>

@@ -23,11 +23,12 @@ a {
 
 .ql-editor {
   margin: 1% 20% 0 20% !important;
-  border: 1px double rgb(124, 124, 124, 0.3);
+  border: 1px double rgb(124, 124, 124, 0.5);
   padding: 10px !important;
   height: 100vh;
   overflow: hidden !important;
   box-shadow: 5px 4px rgb(143, 142, 142);
+  background: white;
   
 }
 
@@ -106,6 +107,7 @@ a {
 
   .quill-wrap {
     flex: 1.8 !important;
+
   }
 
  
@@ -118,7 +120,13 @@ a {
     font-size: 1em;
     padding: 0;
     line-height: 1.7em;
+    border: none !important;
+    box-shadow: none !important;
     
+   }
+
+   #editor {
+     background: none !important;
    }
 
 

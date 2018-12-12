@@ -98,87 +98,6 @@
 
 /*test slideshow*/
 
-
-#slideshow {
-  overflow: hidden;
-  height: 510px;
-  width: 728px;
-  margin: 0 auto;
-  border-radius: 0.5em;
-}
-
-.slide-wrapper {
-  width: 2912px;
-  animation: slide 18s ease infinite;
-}
-
-.slide {
-  float: left;
-  height: 510px;
-  width: 728px;
-}
-
-.slide:nth-child(1) {
-  background: #D93B65;
-}
-
-.slide:nth-child(2) {
-  background: #037E8C;
-}
-
-.slide:nth-child(3) {
-  background: #36BF66;
-}
-
-.slide:nth-child(4) {
-  background: #D9D055;
-}
-
-.slide-number {
-  color: #000;
-  text-align: center;
-  font-size: 10em;
-}
-
-@keyframes slide {
-  20% {
-    margin-left: 0px;
-  }
-
-  30% {
-    margin-left: -728px;
-  }
-
-  50% {
-    margin-left: -728px;
-  }
-
-  60% {
-    margin-left: -1456px;
-  }
-
-  70% {
-    margin-left: -1456px;
-  }
-
-  80% {
-    margin-left: -2184px;
-  }
-
-  90% {
-    margin-left: -2184px;
-  }
-}
-
-
-#slideshow img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 0.5em;
-
-}
-
 #slides {
   position: relative;
   height: 100%;
@@ -216,3 +135,4 @@ background-image: url("/img/wholeNotes.PNG");
 background-size:cover;
 
 }
+

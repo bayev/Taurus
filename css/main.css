@@ -23,6 +23,12 @@ a {
 
 .ql-editor {
   margin: 1% 20% 0 20% !important;
+  border: 1px double rgb(124, 124, 124, 0.3);
+  padding: 10px !important;
+  height: 100vh;
+  overflow: hidden !important;
+  box-shadow: 5px 4px rgb(143, 142, 142);
+  
 }
 
 /*PRINT CSS*/
@@ -35,6 +41,11 @@ a {
 
   body {
     visibility: hidden;
+  }
+
+  .ql-editor {
+    border: none;
+    box-shadow: none;
   }
 
   #editor * {
@@ -71,7 +82,7 @@ a {
    }
 
    .ql-editor {
-    margin: 1% 10% 0 10%;
+    margin: 1% 1% 0 1%;
     padding: 0;
     line-height: 1em;
    }
@@ -103,10 +114,11 @@ a {
    }
 
    .ql-editor {
-    margin: 1% 10% 0 10% !important;
+    margin: 1% 1% 0 1% !important;
     font-size: 1em;
     padding: 0;
     line-height: 1.7em;
+    
    }
 
 

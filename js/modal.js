@@ -13,6 +13,7 @@ window.onclick = function (event) {
 
 window.onload = function (event) {
   checkData();
+  updateView();
 }
 // var modalContent0 = document.getElementsByClassName("")[0];
 

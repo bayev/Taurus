@@ -40,27 +40,23 @@
     overflow-x: hidden;
 }
 
-#moveBtn {
-    justify-content: left;
-    display: flex;
-    flex: 1.5;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 2px;
 
+
+#mobileDiv img {
+    width: 30%;
+} 
+
+#mobileDiv {
+    background-color: rgba(239, 197, 142, 0.18);
+    text-align: center;
+    display: none;
 }
 
-#submit {
-    padding: 20px;
-    flex: 5;
-
-
+.navShow {
+    display: block !important;
 }
 
-#load {
-    padding: 20px;
-    flex: 1;
-}
+
 
 
 

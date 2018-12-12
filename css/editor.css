@@ -50,6 +50,7 @@
     background-color: rgba(239, 197, 142, 0.18);
     text-align: center;
     display: none;
+    border-bottom: 0.2px solid black;
 }
 
 .navShow {

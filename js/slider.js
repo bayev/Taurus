@@ -32,10 +32,3 @@ function playSlideshow() {
     slideInterval = setInterval(nextSlide,7000);
 }
 
-pauseButton.onclick = function() {
-    if(playing) {
-    pauseSlideshow();
-  } else {
-    playSlideshow();
-  }
-};

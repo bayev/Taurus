@@ -7,6 +7,13 @@ window.onload = function () {
 document.getElementById("submit").addEventListener("click", clickSave);
 document.getElementById("showFavs").addEventListener("click", klick);
 document.getElementById("newNote").addEventListener("click", newNote);
+document.getElementById("info").addEventListener("click", infoPage);
+
+function infoPage() {
+  localStorage.removeItem('user');
+  location.reload();
+}
+
 
 
 

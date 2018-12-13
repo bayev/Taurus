@@ -7,6 +7,13 @@ function closeAlertBox() {
   alertClose.parentNode.removeChild(alertClose);
 }
 
+$(window).keypress(function(event) {
+  if (!(event.which == 115 && event.ctrlKey) && !(event.which == 19)) return true;
+  alert("Ctrl-S pressed");
+  event.preventDefault();
+  return false;
+});
+
 window.alert = function (txt) {
   msg = "What's the title of your note?" + "<br>" + "(and then press Enter)";
   var id = "alertBox",

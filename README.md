@@ -24,6 +24,9 @@ Clicking on the bigger star in our nav section will bring forward all of your fa
 <a href="https://quilljs.com/">Quill</a> For the editor that we have used.<br>
 Also our teachers that helped us navigate trough the jungle of code.
 
+### Links.
+<a href="https://trello.com/b/7lwlkFM2/taurus">Taurus Trello Board</a>
+
 ### Authors.
 Tina Olsson <a href="https://github.com/tinaolsson">@tinaolsson</a> <br>
 Sara Överström <a href="https://github.com/oversteem">@oversteem</a><br>

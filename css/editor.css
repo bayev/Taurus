@@ -91,7 +91,7 @@
 
 .ql-editor {
     margin: 1% 20% 0 20% !important;
-    border: 1px double rgb(124, 124, 124, 0.5);
+    border: 1px double rgba(124, 124, 124, 0.5);
     padding: 25px !important;
     height: 100vh;
     box-shadow: 5px 4px rgb(143, 142, 142);

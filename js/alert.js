@@ -1,23 +1,21 @@
-
 function closeAlertBox() {
   alertBox = document.getElementById("alertBox");
   alertClose = document.getElementById("alertClose");
-
   alertBox.parentNode.removeChild(alertBox);
   alertClose.parentNode.removeChild(alertClose);
 }
 
 var isCtrl = false;
-document.onkeyup=function(e){
-    if(e.keyCode == 17) isCtrl=false;
+document.onkeyup = function (e) {
+  if (e.keyCode == 17) isCtrl = false;
 }
- //control s på mac 
-document.onkeydown=function(e){
-    if(e.keyCode == 17) isCtrl=true;
-    if(e.keyCode == 83 && isCtrl == true) {
-        clickSave();
-        return false;
-    }
+//control s på mac 
+document.onkeydown = function (e) {
+  if (e.keyCode == 17) isCtrl = true;
+  if (e.keyCode == 83 && isCtrl == true) {
+    clickSave();
+    return false;
+  }
 }
 
 window.alert = function (txt) {

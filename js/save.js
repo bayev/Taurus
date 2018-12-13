@@ -1,7 +1,6 @@
 /* ONLOAD */
 window.onload = function () {
   updateView();
-  
 }
 
 /* EVENT Listeners */
@@ -33,7 +32,6 @@ function klick() {
     updateView();
     star.style.color = "black";
   };
-
 };
 
 
@@ -55,7 +53,6 @@ function clickSave() {
 function receiveSave(title) {
   localStorage.setItem("<p>" + time() + "</p><p>" + title + "</p>", noteStored());
   updateView();
-
 }
 
 
@@ -73,13 +70,13 @@ function time() {
 
 function updateView() {
   let notes = noteLoad();
-  
+
   if (clicks % 2) {
     document.getElementsByClassName("fas fa-book-open")[0];
     clicks += 1;
   }
-  
-  
+
+
 
   document.getElementById('notes').innerHTML = '<h3>My Notes</h3>';
   notes.forEach((note) => {
@@ -100,7 +97,7 @@ function updateView() {
       var favImg = document.createElement("IMG");
       favImg.setAttribute("src", note.fav ? "../img/star-gold.svg" : "../img/star-solid.svg");
       //console.log(note.fav);
-      
+
       favImg.setAttribute("width", "17");
       favImg.setAttribute('onclick', "toggleFav('" + note.title + "')");
       newDiv.appendChild(favImg);
@@ -173,7 +170,7 @@ function noteLoad() {
     }
   }
   return (notes);
-  
+
 }
 
 /* Show note function just shows the content from the specific key */
@@ -205,7 +202,7 @@ function updateFav() {
 
       myDiv.appendChild(newDiv);
       newDiv.appendChild(aTag);
-      
+
 
     }
   });

@@ -20,7 +20,6 @@ window.onload = function (event) {
 function checkdivs(x) {
   // modal.style.display= (x == 1) ? "none" : "block";
   modal.style.display = "block";
-
   if (x == 1) {
     modal.style.display = " none";
   }
@@ -41,7 +40,6 @@ function checkData() {
 }
 
 function storeData(user) {
-
   localStorage.setItem('user', JSON.stringify(user));
   var user = JSON.parse(localStorage.getItem('user'));
   console.log(user);

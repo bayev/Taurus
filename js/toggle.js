@@ -9,37 +9,36 @@ var clicks2 = 0;
 function toggle() {
     let book = document.getElementById('book');
 
-  clicks1 += 1;
+    clicks1 += 1;
 
-  if (clicks1 % 2) {
-    document.getElementById('notes').classList.add("moved");
-    
-    book.style.color = "gold";
+    if (clicks1 % 2) {
+        document.getElementById('notes').classList.add("moved");
 
-} else {
-    document.getElementById('notes').classList.remove("moved");
-    book.style.color = "black";
-};
+        book.style.color = "gold";
+
+    } else {
+        document.getElementById('notes').classList.remove("moved");
+        book.style.color = "black";
+    };
 };
 
 function toggle2() {
     let book = document.getElementById('book');
-  
+
     clicks2 += 1;
-  
+
     if (clicks2 % 2) {
-      document.getElementsByTagName('nav')[0].classList.add("navShow");
-      document.getElementById('notes').classList.add("moved");
-      book.style.color = "gold";
-      clicks1 += 1;
+        document.getElementsByTagName('nav')[0].classList.add("navShow");
+        document.getElementById('notes').classList.add("moved");
+        book.style.color = "gold";
+        clicks1 += 1;
 
 
-  
-  } else {
-      document.getElementsByTagName('nav')[0].classList.remove("navShow");
-      document.getElementById('notes').classList.remove("moved");
-      book.style.color = "black";
 
-  };
-  };
-  
+    } else {
+        document.getElementsByTagName('nav')[0].classList.remove("navShow");
+        document.getElementById('notes').classList.remove("moved");
+        book.style.color = "black";
+
+    };
+};

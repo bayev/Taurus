@@ -132,53 +132,52 @@
 }
 
 .slide:nth-of-type(1) {
-background-image: url("/img/one.PNG");
-background-size: 100%;
-background-repeat: no-repeat;
-;
+  background-image: url("/img/one.PNG");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  ;
 }
-.slide:nth-of-type(2) {
-background-image: url("/img/two.png");
-background-size: 100%;
 
-background-repeat: no-repeat;
+.slide:nth-of-type(2) {
+  background-image: url("/img/two.png");
+  background-size: 100%;
+
+  background-repeat: no-repeat;
 
 
 }
 
 .slide:nth-of-type(3) {
-background-image: url("/img/three.png");
-background-size: 100%;
-background-repeat: no-repeat;
+  background-image: url("/img/three.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
 
 
 }
 
 .slide:nth-of-type(4) {
-background-image: url("/img/four.png");
-background-size: 100%; 
+  background-image: url("/img/four.png");
+  background-size: 100%;
 
-background-repeat: no-repeat;
+  background-repeat: no-repeat;
 
 
 }
 
 .slide:nth-of-type(5) {
   background-image: url("/img/five.png");
-  background-size: 100%; 
-  
+  background-size: 100%;
+
   background-repeat: no-repeat;
-  
-  
-  }
-
-.slide:nth-of-type(6) {
-background-image: url("/img/six.PNG");
-background-size: 100%; 
-
-background-repeat: no-repeat;
 
 
 }
 
+.slide:nth-of-type(6) {
+  background-image: url("/img/six.PNG");
+  background-size: 100%;
 
+  background-repeat: no-repeat;
+
+
+}

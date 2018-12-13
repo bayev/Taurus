@@ -5,7 +5,7 @@
   left: 40%;
   max-width: 50%;
   height: 20%;
-  background-color: rgb(253, 249, 243);;
+  background-color: rgb(253, 249, 243);
   border-radius: 5px;
   z-index: 2;
   padding: 2em 1em;
@@ -24,19 +24,19 @@
 }
 
 #inputAlert {
-padding: 5px;
-margin: 15px 0;
-width: 90%;
+  padding: 5px;
+  margin: 15px 0;
+  width: 90%;
 }
 
 @media only screen and (max-width: 556px) {
   #alertBox {
-       box-sizing: 20px;
-       margin-left:-80px;
-       padding-left:6%;
-       padding-right:6%;
-       padding-bottom:-50%;
-       font-size: 90%;
+    box-sizing: 20px;
+    margin-left: -80px;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-bottom: -50%;
+    font-size: 90%;
   }
 
 }

@@ -23,7 +23,7 @@ function infoPage() {
 var clicks = 0;
 
 function klick() {
-  let star = document.getElementsByClassName("fa fa-star fa-md")[0];
+  let star = document.getElementById('stars');
   clicks += 1;
 
   if (clicks % 2) {

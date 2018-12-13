@@ -7,7 +7,7 @@ var clicks2 = 0;
 
 
 function toggle() {
-  let book = document.getElementsByTagName("i")[2];
+    let book = document.getElementById('book');
 
   clicks1 += 1;
 
@@ -23,7 +23,7 @@ function toggle() {
 };
 
 function toggle2() {
-    let book = document.getElementsByClassName("fas fa-book-open")[0];
+    let book = document.getElementById('book');
   
     clicks2 += 1;
   

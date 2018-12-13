@@ -1,6 +1,7 @@
 /* ONLOAD */
 window.onload = function () {
   updateView();
+  
 }
 
 /* EVENT Listeners */
@@ -71,11 +72,15 @@ function time() {
 /* Updateview. Sorts through all of the keys in LS and appends a div for them in the section "notes". It also adds buttons, a tags and images. */
 
 function updateView() {
+  let notes = noteLoad();
+  
   if (clicks % 2) {
     document.getElementsByTagName("i")[2].style.color = "black";
     clicks += 1;
   }
-  let notes = noteLoad();
+  
+  
+
   document.getElementById('notes').innerHTML = '<h3>My Notes</h3>';
   notes.forEach((note) => {
     if (note.title == ['favs']) {
@@ -94,6 +99,8 @@ function updateView() {
 
       var favImg = document.createElement("IMG");
       favImg.setAttribute("src", note.fav ? "../img/star-gold.svg" : "../img/star-solid.svg");
+      //console.log(note.fav);
+      
       favImg.setAttribute("width", "17");
       favImg.setAttribute('onclick', "toggleFav('" + note.title + "')");
       newDiv.appendChild(favImg);
@@ -117,9 +124,8 @@ function delDiv(title) {
   updateView();
 }
 
-var favs = [];
-
 function toggleFav(title) {
+  let favs = favLoad();
   if (favs.includes(title)) {
     let x = (favs.indexOf(title));
     favs.splice(x, 1);
@@ -167,6 +173,7 @@ function noteLoad() {
     }
   }
   return (notes);
+  
 }
 
 /* Show note function just shows the content from the specific key */
@@ -198,6 +205,8 @@ function updateFav() {
 
       myDiv.appendChild(newDiv);
       newDiv.appendChild(aTag);
+      
+
     }
   });
 }

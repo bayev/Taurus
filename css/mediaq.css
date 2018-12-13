@@ -1,0 +1,150 @@
+/* Smal devices (mobilphone) */
+@media (min-width: 300px) {
+    /* the text in the editor */
+
+
+    .quill-wrap {
+        width: 20em;
+    }
+
+    .ql-editor {
+        margin: 1% 1% 0 1%;
+        padding: 0;
+        line-height: 1em;
+    }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (max-width: 768px) {
+
+    nav {
+        display: none !important;
+    }
+
+    #mobileDiv {
+        display: block !important;
+    }
+
+
+
+
+    .quill-wrap {
+        flex: 1.8 !important;
+    }
+
+
+    .quill-wrap {
+        width: 20em;
+    }
+
+    .ql-editor {
+        margin: 1% 1% 0 1% !important;
+        font-size: 1em;
+        padding: 0;
+        line-height: 1.7em;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    #editor {
+        background: none !important;
+    }
+}
+
+@media (min-width: 1020px) {
+
+    .quill-wrap {
+        width: 20em;
+    }
+
+    .ql-editor {
+        margin: 1% 10% 0 10%;
+        font-size: 1em;
+        line-height: 1.7em;
+    }
+
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media(min-width: 1900px) {
+
+    /* the text in the editor */
+    .ql-editor {
+        margin: 0.8em 15em 0 3em;
+        font-size: 3em;
+        line-height: 1.7em;
+    }
+
+    .tina>section {
+        width: 40em;
+    }
+
+
+    .quill-wrap {
+        width: 20em;
+    }
+
+}
+
+/* 4k devices */
+@media (min-width: 3995px) {
+
+    /* the text in the editor */
+    .ql-editor {
+        margin: 0.8em 35em 0 3em;
+        font-size: 3em;
+        line-height: 1.7em;
+    }
+
+    .tina>section {
+        width: 40em;
+    }
+
+    .quill-wrap {
+        width: 20em;
+    }
+}
+
+
+/*PRINT CSS*/
+
+@media print {
+
+    @page {
+      margin: 0;
+    }
+  
+    body {
+      visibility: hidden;
+    }
+  
+    .ql-editor {
+      border: none;
+      box-shadow: none;
+    }
+  
+    #editor * {
+      margin: 1% 1% 0 1%;
+      visibility: visible;
+      overflow-y: hidden;
+    }
+  
+    #editor::-webkit-scrollbar {
+      -ms-overflow-style: none;
+      width: 0 !important;
+  
+    }
+  
+    #editor {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+  
+    .ql-tooltip.ql-hidden {
+      visibility: hidden;
+    }
+  }

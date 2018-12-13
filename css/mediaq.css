@@ -45,10 +45,14 @@
         line-height: 1.7em;
         border: none !important;
         box-shadow: none !important;
+        overflow-y: hidden !important;
+        
+
     }
 
     #editor {
         background: none !important;
+        
     }
 }
 

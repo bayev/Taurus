@@ -23,7 +23,7 @@ function toggle() {
 };
 
 function toggle2() {
-    let book = document.getElementsByTagName("i")[2];
+    let book = document.getElementsByClassName("fas fa-book-open")[0];
   
     clicks2 += 1;
   

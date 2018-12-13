@@ -8,7 +8,6 @@
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 13px;
-  height: 100%;
   margin: 0px;
   position: relative;
 }
@@ -32,7 +31,7 @@
 .ql-editor {
   box-sizing: border-box;
   line-height: 1.42;
-  height: 100%;
+  flex:6;
   outline: none;
   overflow-y: auto;
   padding: 12px 15px;
@@ -942,4 +941,10 @@
 }
 .ql-container.ql-snow {
   border: 1px solid #ccc;
+}
+@media screen and (max-width: 600px){
+
+#toolbar {
+  padding-top: 60px;
+}
 }

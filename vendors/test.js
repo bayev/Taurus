@@ -38,10 +38,10 @@
 // }
 
 // SAVE AND LOAD BUTTON CODED
-document.getElementById('editor').innerHTML = localStorage['text'] || 'This text is automatically saved every second :) ';
-document.getElementById("submit").onclick = function () { 
-    localStorage['text'] = document.getElementById('editor').innerHTML;
-}
+// document.getElementById('editor').innerHTML = localStorage['text'] || 'This text is automatically saved every second :) ';
+// document.getElementById("submit").onclick = function () { 
+//     localStorage['text'] = document.getElementById('editor').innerHTML;
+// }
 
 
 // document.getElementById("submit").onclick = function() {
@@ -51,12 +51,33 @@ document.getElementById("submit").onclick = function () {
 //     li.appendChild(t);
 // }
 
+//      document.getElementById("submit").onclick = function() {
+//      var objTo = document.getElementById("myDiv"); //DIVEN I HTML
+//      var divNew = document.createElement("div");    //ADDERAR EN NY DIV
+//      var createlink = document.createAttribute("href");
+//      var skapa = document.createAttribute("href"); 
+//      divNew.innerHTML = document.getElementById("editor").textContent; //KOPIERAR TEXTEN I EDITORN OCH TILLÄGGER I DIVEN.
+//      objTo.appendChild(divNew, createlink);
+//  }
+
 // document.getElementById("submit").onclick = function() {
-//     var objTo = document.getElementById("myDiv");
-//     var divNew = document.createElement("div");
-//     divNew.innerHTML = document.getElementById("editor").textContent;
-//     objTo.appendChild(divNew);
+//     var mydiv = document.getElementById("myDiv");
+//     var newDiv = document.createElement("div");
+//     var aTag = document.createElement('a');
+
+//     aTag.setAttribute('href',"yourlink.htm");
+//     aTag.innerHTML = prompt("Whats the Title of you notes?");
+
+//     mydiv.appendChild(newDiv);
+//     mydiv.appendChild(aTag);
+
+//     localStorage.setItem("test", editor.textContent);
 // }
+
+// window.onload = function(){
+//     test.innerHTML = localStorage.getItem("test");
+// }
+    
 
 
 /*

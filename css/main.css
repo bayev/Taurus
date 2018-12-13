@@ -1,104 +1,31 @@
+
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
-
-.wrapper {
-  /* margin: 0;
-  padding: 0; */
-  font-size: 16px;
-  font-family: 'Roboto', cursive;
-  width: 100vw;
-  height: 100vh;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  position: fixed;
-}
-
-header {
-  /* padding:0;
-  margin:0; */
-  width: 100vw;
-  height: auto;
-}
-
-.inContent {
-  text-align: center;
-  padding: 5%;
-  margin: 0 0 0 1%;
-  background-color: #FD556E;
-  border-radius: 10px;
-  color: teal;
-  border: 2px solid;
-  min-width: 100px;
-  min-height: 50px;
-  border: 2px solid;
-  border-color: darkred;
-  transition: .5s;
+html {
+height: 100vh;
 }
 
 
-
-
-
-@media screen and (max-width: 1000px) {
-  .wrapper, .allContent, .topContent, .bottomContent {
-    width: 100%;
-    /* The width is 100%, when the viewport is 800px or smaller */
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .wrapper, .allContent, .topContent, .bottomContent {
-    width: 100%;
-    /* The width is 100%, when the viewport is 800px or smaller */
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .allContent, .topContent, .bottomContent {
-    width: 100%;
-    /* The width is 100%, when the viewport is 450px or smaller */
-  }
-}
-
-noscript {
-  justify-content: center;
-  display: flex;
-  font-size: 12px;
-  color: white;
-}
-
-/* Nav etc. */
 .tina {
   display: flex;
+  height: 100%;
+  }
+
+/*PRINT CSS*/
+
+@media print {
+body * {
+  visibility: hidden;
 }
-
-nav {
-  width: 10%;
-  flex-direction: column;
-  align-items: stretch;
-  background-color: rgb(155, 155, 226);
-  height: 100vh;
+#editor * {
+  visibility: visible;
 }
-
-.navi {
-  font-size: 230%;
+#editor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
 }
-
-ul {
-  list-style: none;
-}
-
-.notes {
-  background-color: rgb(192, 192, 192);
-  width: 15%;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-/*quill style */
-
-.quillText{
-  width:100vw;
 }

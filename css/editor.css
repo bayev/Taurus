@@ -38,13 +38,20 @@
 
 #editor {
     flex: 9;
-    overflow-y: scroll;
+    margin-bottom: px;
     overflow-x: hidden;
     background: rgb(230, 229, 229);
+}
 
+.ql-editor {
+    overflow: scroll !important;
 }
 
 
+#arrow {
+    width: 100%;
+    background-color: rgb(253, 249, 243);
+  }
 
 #mobileDiv img {
     width: 23%;

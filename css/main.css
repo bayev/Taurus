@@ -21,16 +21,9 @@ a {
   color: red;
 }
 
-.ql-editor {
-  margin: 1% 20% 0 20% !important;
-  border: 1px double rgb(124, 124, 124, 0.5);
-  padding: 10px !important;
-  height: 100vh;
-  overflow: hidden !important;
-  box-shadow: 5px 4px rgb(143, 142, 142);
-  background: white;
-  
-}
+
+
+
 
 /*PRINT CSS*/
 

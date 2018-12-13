@@ -1,106 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Website for making notes">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Website for making notes">
   <title>Taurus</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <!-- Include stylesheet -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/quill.css">
+  <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Satisfy" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+  <link rel="icon" href="img/logo.ico">
+  <!-- Include stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/quill.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/notes.css">
+  <link rel="stylesheet" href="css/editor.css">
+  <link rel="stylesheet" href="css/alert.css">
+  <link rel="stylesheet" href="css/mediaq.css">
+
+
+
 
 </head>
+
 <body>
-    <div class="tina">
-  <nav>
-    <figure class="logo">
-      <img src="img/logo.png" alt="Logo">
-    </figure>
-    <ul class="navi">
-        <li><a><i class="far fa-sticky-note"></i></a></li>
-        <li><a><i class="fas fa-search"></i></a></li>
-        <li><a><i class="far fa-star"></i></a></li>
-        <li><a><i class="fas fa-cogs"></i></a></li>
-    </ul>
-    <div class="infoicon">
-      <a><i class="fas fa-info-circle"></i></a>
+  <div id="mobileDiv">
+    <a id="hiddenLogo"><img src="img/logo.png" alt="Logo"></a></div>
+  <div class="tina">
+    <nav>
+      <figure class="logo">
+        <img src="img/logo.png" alt="Logo">
+      </figure>
+      <ul class="navi">
+        <li><a id="newNote"><i class="far fa-sticky-note"></i></a></li>
+        <li><a id="buttonEx"><i id="book" class="fas fa-book-open"></i></a></li>
+        <li><a id="showFavs"><i id="stars" class="fa fa-star fa-md"></i></a></li>
+        <!-- <li><a><i class="fas fa-cogs"></i></a></li> -->
+      </ul>
+      <div class="infoicon">
+        <a id="info"><i class="fas fa-info-circle"></i></a>
+      </div>
+    </nav>
+
+    <section class="notes" id="notes">
+      <h3>My Notes</h3>
+
+    </section>
+
+    <!-- Create the editor container -->
+    <div class="quill-wrap">
+
+      <div id="toolbar">
+        <span class="ql-formats">
+          <select class="ql-header">
+            <option value="1">Heading</option>
+            <option value="2">Subheading</option>
+            <option selected>Normal</option>
+          </select>
+        </span>
+        <select class="ql-font">
+          <option selected>Sans Serif</option>
+          <option value="serif">Serif</option>
+          <option value="monospace">Monospace</option>
+        </select>
+        <span class="ql-formats">
+          <button class="ql-bold"></button>
+          <button class="ql-italic"></button>
+          <button class="ql-underline"></button>
+          <button class="ql-strike"></button>
+        </span>
+        <span class="ql-formats">
+          <select class="ql-color"></select>
+          <select class="ql-background"></select>
+        </span>
+        <span class="ql-formats">
+          <button class="ql-list" value="ordered"></button>
+          <button class="ql-list" value="bullet"></button>
+          <select class="ql-align">
+            <option selected>'</option>
+            <option value="center">'</option>
+            <option value="right">'</option>
+            <option value="justify">'</option>
+          </select>
+        </span>
+        <span class="ql-formats">
+          <button class="ql-blockquote"></button>
+          <button class="ql-link"></button>
+          <button class="ql-image"></button>
+          <button class="ql-code-block"></button>
+          <button class="ql-video"></button>
+        </span>
+        <span class="ql-formats">
+          <button class="ql-clean"></button>
+        </span>
+        <span class="ql-formats">
+          <button id="f1">F1</button>
+          <button id="f2">F2</button>
+          <button id="f3">F3</button>
+          <button id="fn">FN</button>
+        </span>
+
+        <span class="ql-formats">
+          <a id="print" onclick="window.print();"><i class="fas fa-print"></i></a>
+        </span>
+        <span class="ql-formats">
+          <a id="submit"><i class="far fa-save"></i></a>
+        </span>
+        <a onclick="localStorage.clear(); location.reload();"><i class="fas fa-solar-panel"></i></a>
+      </div>
+
+
+
+      <!-- Create the editor container -->
+      <div id="editor">
+
+        <p class="ql-editor" data-gramm="false" contenteditable="true">
+          <p class="ql-align-center"></p>
+          <h1><strong><em>Hello and Welcome to Quire Notepad!</em></strong></h1>
+          <p><br></p>
+          <p>Hopefully you found the information you needed for using this notepad on the info page that showed up the
+            first time you visited the page. </p>
+          <p>Was it too fast? Then click on the info page in the bottom left to view it again.</p>
+          <p><br></p>
+          <p class="ql-align-center"><img alt="Button New Page" src="/img/newpage.png"></p>
+          <p><br></p>
+          <pre class="ql-syntax" spellcheck="false">Do you just want to start writing in a new note right away? Click the new note button in the navbar on the left.
+        </pre>
+          <p><br></p>
+          <p class="ql-align-center"><img alt="Button info page" src="/img/infopage.png"></p>
+          <p><br></p>
+        </p>
+      </div>
     </div>
-</nav>
-
-<section class="notes">
-  <h3>Need stuff</h3>
-</section>
-
-  <!-- Create the editor container -->
-  <div class="quillText">
-  <div id="editor">
-
   </div>
-  <div id="moveBtn"> <button type="submit" id="submit"> Save </button> </div>
-
-</div>
-</div>
-
-
-
-
 
 
   <!-- Include the Quill library -->
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-  <script src="js/save.js"></script>
-  
+
+
 
 
   <!-- Initialize Quill editor -->
   <script>
-    var quill = new Quill('#editor', {
+    var editor = new Quill('#editor', {
+      modules: {
+        toolbar: '#toolbar'
+      },
       theme: 'snow'
     });
   </script>
 
 
-</div>
 
-<div id="form" class="modal">
-  <div class="xMark">
-    <span onclick="document.getElementById('form').style.display='none', checkdivs(1)" class="close" title="Close Modal">&times;</span>
-  </div>
-  <form class="modal-content">
-    <div class="container">
+
+  <div id="form" class="modal">
+    <div class="xMark">
+      <span onclick="document.getElementById('form').style.display='none', checkdivs(1)" class="close" title="Close Modal">&times;</span>
+    </div>
+    <form class="modal-content">
+      <div class="container">
         <h2 class="firstH">Welcome to Quire</h2> <br />
         <div class="information">
 
           <p class="firstInfo">
-            A free online text notepad.
-            What can you do?
-            Create different notepages and scribble down your notes.
-            Save them and it will be stored in Quire. Come back anytime you would like and edit, delete, structure your content.
-            All notes are dated automatically from when you edit in them. You have an really easy overview of when you created something.
-            Mark you note with a star to bookmark it. So you can more easily navigate to your marked page.
+            This is a free text editor for you to use as your own personal notepad.<br>
+            What can you do?<br><br>
+            Take a minute to watch our slideshow down below where we explain the different steps.<br>
+            Enjoy!
           </p>
-
-
-
-      </div>
-            <div id="slideshow">
-            <div class="slide-wrapper">
-            <div class="slide"><img src="https://weblearn.ox.ac.uk/library/image/help/en/What-is-the-Rich-Text-Editor-/Rich-Text-Editor-Toolbar.png" alt="text editor"></div>
-            <div class="slide"><img src="https://developer.atlassian.com/server/jira/platform/images/mnstr378-tut1.jpg" alt="saved document"></div>
-            <div class="slide"><img src="https://www.jqueryscript.net/images/Rich-Text-Editor-jQuery-RichText.jpg" alt="closed up picture text editor"></div>
-            <div class="slide"><img src="https://d2.alternativeto.net/dist/s/froala_334261_full.jpg?format=jpg&width=1600&height=1600&mode=min&upscale=false" alt="Function"></div>
-          </div>
         </div>
-    </div>
-  </form>
+        <ul id="slides">
+          <li class="slide showing"></li>
+          <li class="slide"></li>
+          <li class="slide"></li>
+          <li class="slide"></li>
+          <li class="slide"></li>
+          <li class="slide"></li>
+
+        </ul>
+      </div>
+    </form>
+  </div>
+
+
+
+  <script src="js/fonts.js"></script>
+  <script src="js/alert.js"></script>
+  <script src="js/toggle.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/save.js"></script>
   <script src="js/modal.js"></script>
 
-
-
 </body>
+
 </html>

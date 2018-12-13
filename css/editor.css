@@ -10,7 +10,7 @@
 .quill-wrap .ql-active {
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin: 0, 1em, 0, 1em;
+    margin: 0 1em 0 1em;
 }
 
 .quill-wrap button,

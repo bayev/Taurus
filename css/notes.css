@@ -1,8 +1,5 @@
-
-
 .notes {
   background-color: rgba(239, 197, 142, 0.18);
-
   flex: 0;
   flex-direction: column;
   overflow-y: scroll;

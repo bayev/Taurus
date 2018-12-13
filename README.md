@@ -17,7 +17,7 @@ Quill comes with cool functions already added. Like changing font, size, adding 
 * Every note that you save will come with a star and an trash can image. Clicking on the trash can will delete it forever. Clicking on the star image will add the note into the favorite section. 
 Clicking on the bigger star in our nav section will bring forward all of your favorites notes.
 
-![Alt text](/img/quirepage.png "Our Quire Notepad")
+![Alt text](/img/quirepage.pn "Our Quire Notepad")
 
 ### Attribution.
 <a href="https://fontawesome.com/">Font Awesome</a> For the icons that we have used.<br>

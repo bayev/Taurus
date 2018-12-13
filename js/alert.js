@@ -11,7 +11,7 @@ var isCtrl = false;
 document.onkeyup=function(e){
     if(e.keyCode == 17) isCtrl=false;
 }
-
+ //control s på mac 
 document.onkeydown=function(e){
     if(e.keyCode == 17) isCtrl=true;
     if(e.keyCode == 83 && isCtrl == true) {
@@ -25,11 +25,13 @@ window.alert = function (txt) {
   var id = "alertBox",
     alertBox, closeId = "alertClose",
     alertClose;
+
   alertBox = document.createElement("div");
   var inputF = document.createElement("input");
   inputF.setAttribute("id", "inputAlert");
   inputF.setAttribute("type", "text");
   inputF.setAttribute("value", "");
+
   document.body.appendChild(alertBox);
   alertBox.id = id;
   alertBox.innerHTML = msg;

@@ -23,7 +23,7 @@ function infoPage() {
 var clicks = 0;
 
 function klick() {
-  let star = document.getElementsByTagName("i")[3];
+  let star = document.getElementsByClassName("fa fa-star fa-md")[0];
   clicks += 1;
 
   if (clicks % 2) {
@@ -75,7 +75,7 @@ function updateView() {
   let notes = noteLoad();
   
   if (clicks % 2) {
-    document.getElementsByTagName("i")[2].style.color = "black";
+    document.getElementsByClassName("fas fa-book-open")[0];
     clicks += 1;
   }
   

@@ -42,6 +42,24 @@
     background: rgb(230, 229, 229);
 }
 
+.ql-editor::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(219, 219, 219, 0.3);
+	background-color: #F5F5F5;
+}
+
+.ql-editor::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.ql-editor::-webkit-scrollbar-thumb
+{
+	background-color: #969696;
+}
+
+
 
 
 #mobileDiv img {

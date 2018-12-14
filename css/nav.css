@@ -1,0 +1,38 @@
+.logo img {
+    width: 60%;
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    flex: 0.5;
+    justify-content: space-around;
+    background-color: rgb(253, 249, 243);
+    height: 100vh;
+}
+
+.navi,
+.infoicon {
+    font-size: 150%;
+    text-align: center;
+}
+
+.navi {
+    margin-top: 20%;
+}
+
+ul {
+    list-style: none;
+}
+
+.navi li {
+    padding: 10px 0;
+}
+
+.infoicon {
+    margin-top: auto;
+    padding: 10px 0;
+}

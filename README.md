@@ -24,6 +24,9 @@ Clicking on the bigger star in our nav section will bring forward all of your fa
 <a href="https://quilljs.com/">Quill</a> For the editor that we have used.<br>
 Also our teachers that helped us navigate trough the jungle of code.
 
+### For developers.
+The tricky parts in our Javascript functions have explanations in comment form next to the functions.
+
 ### Links.
 <a href="https://trello.com/b/7lwlkFM2/taurus">Taurus Trello Board</a>
 

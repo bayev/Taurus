@@ -13,7 +13,6 @@ function toggle() {
 
     if (clicks1 % 2) {
         document.getElementById('notes').classList.add("moved");
-
         book.style.color = "gold";
 
     } else {
@@ -24,7 +23,6 @@ function toggle() {
 
 function toggle2() {
     let book = document.getElementById('book');
-
     clicks2 += 1;
 
     if (clicks2 % 2) {
@@ -33,12 +31,9 @@ function toggle2() {
         book.style.color = "gold";
         clicks1 += 1;
 
-
-
     } else {
         document.getElementsByTagName('nav')[0].classList.remove("navShow");
         document.getElementById('notes').classList.remove("moved");
         book.style.color = "black";
-
     };
 };

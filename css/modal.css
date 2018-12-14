@@ -44,8 +44,6 @@
   color: black;
   min-width: 100px;
   min-height: 50px;
-
-
 }
 
 
@@ -53,11 +51,9 @@
 .container {
   padding: 5% 5%;
   border-radius: 20px;
-
   background-image: url(/img/bginfo.png);
   background-size: cover;
   background-position: center;
-
 }
 
 /*style p */
@@ -119,7 +115,6 @@
   height: 80%;
   opacity: 0;
   z-index: 1;
-
   -webkit-transition: opacity 1s;
   -moz-transition: opacity 1s;
   -o-transition: opacity 1s;
@@ -141,43 +136,29 @@
 .slide:nth-of-type(2) {
   background-image: url("/img/two.png");
   background-size: 100%;
-
   background-repeat: no-repeat;
-
-
 }
 
 .slide:nth-of-type(3) {
   background-image: url("/img/three.png");
   background-size: 100%;
   background-repeat: no-repeat;
-
-
 }
 
 .slide:nth-of-type(4) {
   background-image: url("/img/four.png");
   background-size: 100%;
-
   background-repeat: no-repeat;
-
-
 }
 
 .slide:nth-of-type(5) {
   background-image: url("/img/five.png");
   background-size: 100%;
-
   background-repeat: no-repeat;
-
-
 }
 
 .slide:nth-of-type(6) {
   background-image: url("/img/six.PNG");
   background-size: 100%;
-
   background-repeat: no-repeat;
-
-
 }

@@ -1,6 +1,8 @@
 let modal = document.getElementById('form');
 let ok = document.getElementsByClassName('modal')[0];
 var test = document.getElementsByClassName('test')[0];
+var checkUser = () => JSON.parse(localStorage.getItem('user'));
+
 var user = {
   name: 'key'
 };
@@ -27,7 +29,6 @@ function checkdivs(x) {
 
 
 function checkData() {
-
   if (checkUser() === null) {
     modal.style.display = "block";
     console.log("test1 checkingdata so dispaly wll be block");
@@ -36,7 +37,6 @@ function checkData() {
     console.log("else dont show modal");
     modal.style.display = "none";
   }
-
 }
 
 function storeData(user) {
@@ -54,4 +54,3 @@ function clearData(key) {
     console.log(key);
   }
 }
-var checkUser = () => JSON.parse(localStorage.getItem('user'));

@@ -9,7 +9,7 @@ var isCtrl = false;
 document.onkeyup = function (e) {
   if (e.keyCode == 17) isCtrl = false;
 }
-//control s på mac 
+
 document.onkeydown = function (e) {
   if (e.keyCode == 17) isCtrl = true;
   if (e.keyCode == 83 && isCtrl == true) {
@@ -17,6 +17,9 @@ document.onkeydown = function (e) {
     return false;
   }
 }
+
+
+/* Our custom made alert box, where the user puts in the title of her or his notes */
 
 window.alert = function (txt) {
   msg = "What's the title of your note?" + "<br>" + "(and then press Enter)";

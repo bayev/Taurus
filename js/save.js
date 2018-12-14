@@ -14,9 +14,6 @@ function infoPage() {
   location.reload();
 }
 
-
-
-
 /* When you click on the star in the nav. Its changes color and calls functions updateFav and updateView */
 
 var clicks = 0;
@@ -33,9 +30,6 @@ function klick() {
     star.style.color = "black";
   };
 };
-
-
-
 
 
 
@@ -76,8 +70,6 @@ function updateView() {
     clicks += 1;
   }
 
-
-
   document.getElementById('notes').innerHTML = '<h3>My Notes</h3>';
   notes.forEach((note) => {
     if (note.title == ['favs']) {
@@ -101,7 +93,6 @@ function updateView() {
       favImg.setAttribute("width", "17");
       favImg.setAttribute('onclick', "toggleFav('" + note.title + "')");
       newDiv.appendChild(favImg);
-
 
       var delImg = document.createElement("IMG");
       delImg.setAttribute("src", "../img/trash.svg");
@@ -186,9 +177,6 @@ function updateFav() {
     notes.removeChild(notes.firstChild);
   }
   document.getElementById('notes').innerHTML = '<h3>My Notes</h3>';
-
-
-
   notes.forEach((note) => {
     if (note.fav == false) {
       return;
@@ -202,8 +190,6 @@ function updateFav() {
 
       myDiv.appendChild(newDiv);
       newDiv.appendChild(aTag);
-
-
     }
   });
 }

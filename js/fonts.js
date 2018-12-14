@@ -1,3 +1,5 @@
+/* This is our custom made button for our custom fonts for our editor. */
+
 document.getElementById("f1").addEventListener('click', function () {
     font1();
 });

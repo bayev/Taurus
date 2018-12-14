@@ -46,13 +46,13 @@
         border: none !important;
         box-shadow: none !important;
         overflow-y: hidden !important;
-        
+
 
     }
 
     #editor {
         background: none !important;
-        
+
     }
 }
 
@@ -117,38 +117,38 @@
 @media print {
 
     @page {
-      margin: 0;
+        margin: 0;
     }
-  
+
     body {
-      visibility: hidden;
+        visibility: hidden;
     }
-  
+
     .ql-editor {
-      border: none;
-      box-shadow: none;
+        border: none;
+        box-shadow: none;
     }
-  
+
     #editor * {
-      margin: 1% 1% 0 1%;
-      visibility: visible;
-      overflow-y: hidden;
+        margin: 1% 1% 0 1%;
+        visibility: visible;
+        overflow-y: hidden;
     }
-  
+
     #editor::-webkit-scrollbar {
-      -ms-overflow-style: none;
-      width: 0 !important;
-  
+        -ms-overflow-style: none;
+        width: 0 !important;
+
     }
-  
+
     #editor {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
     }
-  
+
     .ql-tooltip.ql-hidden {
-      visibility: hidden;
+        visibility: hidden;
     }
-  }
+}

@@ -34,5 +34,5 @@ The tricky parts in our Javascript functions have explanations in comment form n
 Tina Olsson <a href="https://github.com/tinaolsson">@tinaolsson</a> <br>
 Sara Överström <a href="https://github.com/oversteem">@oversteem</a><br>
 Edward Kumerius <a href="https://github.com/Eddyking1">@Eddyking1</a> <br>
-Patrick Sjöberg <a href="https://github.com/paz198787">@paz198787</a> <br>
+Patrick Sjöberg <a href="https://github.com/pazsea">@pazsea</a> 
 Azamat Azhibayev <a href="https://github.com/bayev">@bayev</a> 
